@@ -1,18 +1,18 @@
 <template lang="html">
  <div id="app">
-     <div class="QA" v-if="currentQuestion < questions.length">
+     <!-- <div class="QA" v-if="currentQuestion < questions.length"> -->
   
   <div class="question" v-if="show">
-    <p>Q{{currentQuestion + 1}}</p>
+    <question />
     <img src="./assets/logo.png" v-on:click="show = !show"/>
     <img src="./assets/logo.png" v-on:click="show = !show"/>
     </div>
     <div class="answer" v-else>
     <p >Answer</p>
-    <button v-on:click="currentQuestion +=1, show = !show">
-    Next!
-  </button>
-    </div>
+    <!-- <button v-on:click="currentQuestion +=1, show = !show"> -->
+    <!-- Next!
+  </button> -->
+    <!-- </div> -->
     
 </div>
  <div class="summary" v-else>
@@ -27,22 +27,24 @@
 
 <script>
 import QuizServices from "./services/QuizServices.js";
+import Question from "./components/Question.vue";
 
 export default {
   name: "app",
 
   data() {
     return {
-      questions: [],
       users: [],
-      show: true,
-      currentQuestion: 0
+      show: true
     };
   },
 
   mounted() {
-    QuizServices.getQuestions().then(questions => (this.questions = questions));
     QuizServices.getUsers().then(users => (this.users = users));
+  },
+
+  components: {
+    question: Question
   }
 };
 </script>
