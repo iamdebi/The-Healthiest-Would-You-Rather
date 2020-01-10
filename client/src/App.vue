@@ -1,6 +1,6 @@
 <template lang="html">
  <div id="app">
-     <div class="QA" v-if="currentQuestion < 8">
+     <div class="QA" v-if="currentQuestion < 7">
   
   <div class="question" v-if="show">
     <p>Q{{currentQuestion + 1}}</p>
