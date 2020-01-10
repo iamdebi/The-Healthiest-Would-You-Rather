@@ -1,15 +1,15 @@
-const baseURL = "http://localhost:3000/api/healthy-quiz/";
+const baseURL = "http://localhost:3000/api";
 
 export default {
   // for questions
   getQuestions() {
-    return fetch(baseURL).then(res => res.json());
+    return fetch(baseURL + "/questions").then(res => res.json());
   },
 
   //   for users
 
   getUsers() {
-    return fetch(baseURL).then(res => res.json());
+    return fetch(baseURL + "/users").then(res => res.json());
   },
 
   postUser(payload) {
