@@ -50,6 +50,17 @@ const createRouter = function(collection) {
     })
   });
 
+  router.delete('/:id', (req, res) => {
+    const id = ObjectId(req.params.id)
+    collection.deleteOne({_id: id})
+    .then(docs => res.json(docs))
+    .catch((error) => {
+      console.error(error);
+      res.status(500);
+      res.json({status: 500, error: error})
+    })
+  });
+
   return router()
 };
 module.exports = createRouter
