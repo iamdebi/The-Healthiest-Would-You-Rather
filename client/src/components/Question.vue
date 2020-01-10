@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="question" v-if="show">
-    <h1>{{questions[currentQuestion].option1}}</h1>
-    <img :src="'questions[currentQuestion].url1}}'" />
+  <div class="question">
+    <h1>This is option 1 {{this.questions[currentQuestion].option1}}</h1>
+    <img :src="this.questions[currentQuestion].url1" />
   </div>
 </template>
 
@@ -11,6 +11,7 @@ import { eventBus } from "../main.js";
 
 export default {
   name: "question",
+  props: ["currentQuestion"],
 
   data() {
     return {
@@ -18,16 +19,9 @@ export default {
     };
   },
 
-  props: ["show", "currentQuestion"],
-
   mounted() {
-    QuizServices.getQuestions().then(questions => (this.questions = questions));
-  },
-
-  methods: {
-    increaseCurrentQuestion() {
-      currentQuestion += 1;
-    }
+    QuizServices.getQuestions()
+    .then(questions => (this.questions = questions));
   }
 };
 </script>

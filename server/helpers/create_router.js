@@ -42,7 +42,7 @@ const createRouter = function (collection) {
       {_id: id},
       {$set: req.body},
       {returnOriginal: false})
-    .then(docs => res.json(docs))
+    .then(docs => res.json(docs.value))
     .catch((error) => {
       console.error(error);
       res.status(500);

@@ -1,17 +1,17 @@
 const baseURL = "http://localhost:3000/api";
 
 export default {
-  // for questions
+  // get all questions
   getQuestions() {
     return fetch(baseURL + "/questions").then(res => res.json());
   },
 
-  //   for users
-
+  // get all users
   getUsers() {
     return fetch(baseURL + "/users").then(res => res.json());
   },
 
+  // adds user to database
   postUser(payload) {
     return fetch(baseURL, {
       method: "POST",
@@ -20,12 +20,14 @@ export default {
     }).then(res => res.json());
   },
 
+  // deletes user from database
   deleteUser(id) {
     return fetch(baseURL + id, {
       method: "DELETE"
     });
   },
 
+  // updates user's details
   updateUser(payload) {
     id = payload._id;
     return fetch(baseURL + id, {
