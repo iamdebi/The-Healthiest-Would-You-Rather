@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const MongoClient = require(mongodb).MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const createRouter = require("./helpers/create_router");
 const cors = require("cors");
 const parser = require("body-parser");
@@ -8,7 +8,7 @@ const parser = require("body-parser");
 app.use(cors());
 app.use(parser.json());
 
-MongoClient.connect("mongodb://ocalhost:27017", (error, client) => {
+MongoClient.connect("mongodb://localhost:27017", (error, client) => {
   if (error) {
     console.log(error);
   }
