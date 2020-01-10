@@ -16,7 +16,7 @@ db.questions.insertMany([
 
 db.users.insertMany([
     {
-        responses: [1,2,1,1,2,2,1,1],
+        responses: [1,2,1,1,2,2,1,2],
         latitude: "55.865426",
         longitude: "-4.257861"
     },
