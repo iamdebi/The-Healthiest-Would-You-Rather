@@ -13,12 +13,14 @@ export default {
 
   data() {
     return {
-      questions: []
+      questions: [],
+      users: []
     };
   },
 
   mounted() {
     QuizServices.getQuestions().then(questions => (this.questions = questions));
+    QuizServices.getUsers().then(users => (this.users = users));
   }
 };
 </script>
