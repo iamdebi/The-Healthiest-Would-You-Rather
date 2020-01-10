@@ -14,5 +14,17 @@ const createRouter = function(collection) {
       res.json({status: 500, error: error})
     })
   });
+
+  router.get('/:id', (req, res) => {
+    const id = ObjectId(req.params.id)
+    collection.findOne({_id: id})
+    .then(docs => res.json(docs))
+    .catch((error) => {
+      console.error(error);
+      res.status(500);
+      res.json({status: 500, error: error})
+    })
+  });
+
   
 };
