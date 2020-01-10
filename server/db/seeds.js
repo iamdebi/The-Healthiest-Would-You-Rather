@@ -6,10 +6,11 @@ db.questions.insertMany([
     {
         option1: "20g of ice cream",
         option2: "40g of butter",
+        reponseText: "20g of ice cream and 40g of butter have the same amount of fat",
         url1: "@/assets/ice-cream.jpg",
         url2: "@/assets/butter.jpg",
-        totalresponses1: 0,
-        totalresponses2: 0
+        totalResponses1: 0,
+        totalResponses2: 0
     },
 
 ]);
