@@ -35,5 +35,21 @@ const createRouter = function(collection) {
       res.json({status: 500, error: error})
     })
   });
-  
+
+  router.put('/:id', (req, res) => {
+    const id = ObjectId(req.params.id)
+    collection.findOneAndUpdate(
+      {_id: id},
+      {$set: req.body},
+      {returnOriginal: false})
+    .then(docs => res.json(docs))
+    .catch((error) => {
+      console.error(error);
+      res.status(500);
+      res.json({status: 500, error: error})
+    })
+  });
+
+  return router()
 };
+module.exports = createRouter
