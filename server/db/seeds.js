@@ -21,5 +21,5 @@ db.users.insertMany([
         latitude: "55.865426",
         longitude: "-4.257861"
     },
-
+ 
 ]);
