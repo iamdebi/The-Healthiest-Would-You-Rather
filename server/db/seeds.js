@@ -9,8 +9,8 @@ db.questions.insertMany([{
     responseText: "250ml of ice cream and 44g of butter have the same amount of fat",
     url1: "http://localhost:8080/img/ice-cream.jpg",
     url2: "http://localhost:8080/img/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 142,
+    totalResponses2: 8
   },
 
   {
@@ -19,8 +19,8 @@ db.questions.insertMany([{
     responseText: "1 can of coke is the same as eating 7 sugar cubes",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 124,
+    totalResponses2: 26
   },
 
   {
@@ -29,8 +29,8 @@ db.questions.insertMany([{
     responseText: "1 serving of ready made pasta sauce contains 1.5g of salt",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 132,
+    totalResponses2: 18
   },
 
   {
@@ -39,28 +39,28 @@ db.questions.insertMany([{
     responseText: "55g of cooked lentils has nearly 18g of protein, more than the amount in a hamburger",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 62,
+    totalResponses2: 88
   },
 
   {
-    option1: "A blueberry muffins",
+    option1: "A blueberry muffin",
     option2: "A slice of wholemeal bread",
     responseText: "1 blueberry muffin has the same fibre content as a slice of wholemeal bread",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 108,
+    totalResponses2: 42
   },
 
   {
-    option1: "8oz ribeye stake",
+    option1: "8oz ribeye steak",
     option2: "1 boiled egg",
     responseText: "Both options have around the same amount of cholesterol, however the cholesterol found within a boiled egg is better for your heart",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 94,
+    totalResponses2: 66
   },
 
   {
@@ -69,8 +69,8 @@ db.questions.insertMany([{
     responseText: "The calorie content of both of these is the same",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
-    totalResponses1: 0,
-    totalResponses2: 0
+    totalResponses1: 81,
+    totalResponses2: 69
   }
 
 ]);
