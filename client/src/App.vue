@@ -1,7 +1,10 @@
 <template lang="html">
   <div id="app">
-    <button type="button" name="button" v-on:click="nextQuestion()" v-if="this.currentQuestion == -1">Start</button>
-    <div class="QA" v-if="this.currentQuestion > -1 && this.currentQuestion < this.questions.length">
+    <div class="intro" v-if="this.currentQuestion == -1">
+      <intro />
+    </div>
+
+    <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
       <div class="question" v-if="this.show == true">
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
@@ -23,6 +26,7 @@ import QuizServices from "./services/QuizServices.js";
 import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
 import AnswerFrame from "./components/AnswerFrame.vue";
+import Intro from "./components/Intro.vue";
 
 export default {
   name: "app",
@@ -41,12 +45,13 @@ export default {
       .then(questions => (this.questions = questions));
 
     QuizServices.getUsers()
-    .then(users => (this.users = users));
+      .then(users => (this.users = users));
 
     eventBus.$on("change-display", display => {
       this.nextDisplay();
     });
-    eventBus.$on("next-question", display => {
+
+    eventBus.$on("next-question", question => {
       this.nextQuestion();
     });
 
@@ -55,7 +60,8 @@ export default {
   components: {
     "question": Question,
     "summary-list": Summary,
-    "answer-frame": AnswerFrame
+    "answer-frame": AnswerFrame,
+    "intro": Intro
   },
 
   methods: {
