@@ -57,11 +57,11 @@ img {
 }
 
 .option1 {
-  float:right;
+  float:left;
 }
 
 .option2 {
-  float:left;
+  float:right;
 }
 
 .option-text {
