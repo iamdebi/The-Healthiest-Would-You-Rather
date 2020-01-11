@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
-      <summary :questions="this.questions"/>
+      <summary-list :questions="this.questions"/>
     </div>
   </div>
 
@@ -53,7 +53,7 @@ export default {
 
   components: {
     "question": Question,
-    "summary": Summary,
+    "summary-list": Summary,
     "answer-frame": AnswerFrame
   },
 
