@@ -3,13 +3,19 @@
     <div class="title">
       <h1>Question: {{currentQuestion+1}} </h1>
     </div>
+    <div class="would-you-rather">
+      <h2>Would you rather eat...?</h2>
+    </div>
+    <div class="or">
+      <p class="or-text">OR</p>
+    </div>
     <div class="option1">
-      <h3>{{this.questions[currentQuestion].option1}}</h3>
       <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+      <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
     </div>
     <div class="option2">
-      <h3>{{this.questions[currentQuestion].option2}}</h3>
       <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+      <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
     </div>
   </div>
 </template>
@@ -39,4 +45,26 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.question {
+  max-width:700px;
+}
+
+img {
+  width:300px;
+  height:300px;
+  border-radius: 50%;
+}
+
+.option1 {
+  float:right;
+}
+
+.option2 {
+  float:left;
+}
+
+.option-text {
+  align-content: center;
+}
 </style>
