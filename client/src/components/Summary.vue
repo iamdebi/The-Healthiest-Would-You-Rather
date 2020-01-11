@@ -19,7 +19,7 @@ import eventBus from "../main.js"
 import ResponseListItem from "./ResponseListItem.vue"
 export default {
   name: "summary",
-  props : [questions],
+  props : ["questions"],
   mounted() {
 
   },
