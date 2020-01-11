@@ -2,7 +2,7 @@
   <div id="app">
     <div class="QA" v-if="this.currentQuestion < 7">
       <div class="question" v-if="this.show == true">
-        <question :currentQuestion="this.currentQuestion"/>
+        <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
       <div class="answer" v-if="this.show == false">
         <answer-frame :questions="questions" :currentQuestion="this.currentQuestion"/>

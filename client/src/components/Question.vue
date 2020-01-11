@@ -14,7 +14,7 @@ import { eventBus } from "../main.js";
 
 export default {
   name: "question",
-  props: ["currentQuestion"],
+  props: ["currentQuestion", "questions"],
 
   data() {
     return {
