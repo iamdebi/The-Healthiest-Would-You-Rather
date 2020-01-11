@@ -18,14 +18,9 @@ export default {
 
   data() {
     return {
-      questions: []
     };
   },
 
-  mounted() {
-    QuizServices.getQuestions()
-    .then(questions => (this.questions = questions));
-  },
   methods: {
     handleClick() {
       eventBus.$emit("change-display")

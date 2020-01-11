@@ -29,12 +29,16 @@ export default {
   data() {
     return {
       users: [],
+      questions:[],
       show: true,
       currentQuestion: 0
     };
   },
 
   mounted() {
+    QuizServices.getQuestions()
+      .then(questions => (this.questions = questions));
+
     QuizServices.getUsers()
     .then(users => (this.users = users));
 
