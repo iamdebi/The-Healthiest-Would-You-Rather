@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="question">
     <div class="title">
-      <h1>Question: {{currentQuestion}} </h1>
+      <h1>Question: {{currentQuestion+1}} </h1>
     </div>
     <div class="option1">
       <h3>{{this.questions[currentQuestion].option1}}</h3>
