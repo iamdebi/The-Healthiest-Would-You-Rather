@@ -1,11 +1,17 @@
 <template lang="html">
   <div class="question">
-    <h1>Question: {{currentQuestion}} {{this.questions[currentQuestion].option1}}</h1>
-    <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick"/>
+    <div class="title">
+      <h1>Question: {{currentQuestion}} </h1>
+    </div>
+    <div class="option1">
+      <h3>{{this.questions[currentQuestion].option1}}</h3>
+      <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick"/>
+    </div>
+    <div class="option2">
+    <h3>{{this.questions[currentQuestion].option2}}</h3>
     <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick"/>
-    <button v-on:click="handleClick">Click</button>
-    <button v-on:click="handleClick">Click2</button>
-  </div>
+   </div>
+ </div>
 </template>
 
 <script>
