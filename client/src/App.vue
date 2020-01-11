@@ -1,28 +1,24 @@
 <template lang="html">
- <div id="app">
+  <div id="app">
     <div class="QA" v-if="this.currentQuestion < 7">
-
       <div class="question" v-if="this.show == true">
-        <question :currentQuestion="this.currentQuestion" />
-        <img src="./assets/logo.png" v-on:click="nextDisplay()"/>
-        <img src="./assets/logo.png" v-on:click="nextDisplay()"/>
+        <question :currentQuestion="this.currentQuestion"/>
       </div>
       <div class="answer" v-if="this.show == false">
         <p >Answer</p>
-       <button v-on:click="nextQuestion()">Next!</button>
+        <button v-on:click="nextQuestion()">Next!</button>
       </div>
-
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
         <p>Summary of User data</p>
     </div>
-</div>
+  </div>
 
 </template>
 
 <script>
 import Answer from "./components/Answer.vue";
-import eventBus from "./main.js";
+import {eventBus} from "./main.js";
 import QuizServices from "./services/QuizServices.js";
 import Question from "./components/Question.vue";
 
@@ -40,7 +36,12 @@ export default {
 
   mounted() {
     QuizServices.getUsers()
-    .then(users => (this.users = users))
+    .then(users => (this.users = users));
+
+    eventBus.$on("change-display", display => {
+      this.nextDisplay()
+    });
+
   },
 
   components: {
@@ -55,7 +56,9 @@ export default {
     nextDisplay() {
       this.show = !this.show
     }
-  }
+  },
+
+
 };
 </script>
 
