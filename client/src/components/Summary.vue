@@ -7,7 +7,7 @@
         <th>Option 2</th>
         <th>Number of people</th>
       </tr>
-      <response-list-item v-for="(question, index) in questions" :question="question"/>
+      <response-list-item v-for="(question, index) in this.questions" :question="question"/>
     </table>
     <!-- <button type="button" name="share">Share</button> -->
   </div>

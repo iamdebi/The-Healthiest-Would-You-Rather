@@ -14,7 +14,7 @@
 
 export default {
   name:"response-list-item",
-  props: ["question"],
+  props: [question],
 
 }
 </script>
