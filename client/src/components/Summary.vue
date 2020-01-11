@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="summary">
+  <div id="">
     <table>
       <tr>
         <th>Option 1</th>
