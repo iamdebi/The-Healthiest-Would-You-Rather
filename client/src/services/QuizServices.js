@@ -7,10 +7,10 @@ export default {
   },
 
   updateQuestionResponses(payload) {
-    id = payload._id
+    const id = payload._id
     return fetch(baseURL + "/questions/" + id, {
       method: "PUT",
-      body: JSON.strigify(payload),
+      body: JSON.stringify(payload),
       headers: { "Content-Type": "application/json" }
     }).then(res => res.json());
   },
@@ -38,7 +38,7 @@ export default {
 
   // updates user's details
   updateUser(payload) {
-    id = payload._id;
+    const id = payload._id;
     return fetch(baseURL + "/users/" + id, {
       method: "UPDATE",
       body: JSON.stringify(payload),

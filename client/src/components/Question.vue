@@ -35,13 +35,13 @@ export default {
 
   methods: {
     handleClick1() {
-      this.questions[currentQuestion].totalResponses1 += 1;
-      QuizServices.updateQuestionResponses(this.questions[currentQuestion]);
+      this.questions[this.currentQuestion].totalResponses1 += 1;
+      QuizServices.updateQuestionResponses(this.questions[this.currentQuestion]);
       eventBus.$emit("selected-option", 1)
     },
     handleClick2() {
-      this.questions[currentQuestion].totalResponses2 += 1;
-      QuizServices.updateQuestionResponses(this.questions[currentQuestion]);
+      this.questions[this.currentQuestion].totalResponses2 += 1;
+      QuizServices.updateQuestionResponses(this.questions[this.currentQuestion]);
       eventBus.$emit("selected-option", 2)
     },
   }
