@@ -35,6 +35,7 @@ export default {
 
   methods: {
     handleClick1() {
+<<<<<<< HEAD
       this.questions[currentQuestion].totalResponses1 += 1;
       QuizServices.updateQuestionResponses(this.questions[currentQuestion]);
       eventBus.$emit("change-display", 1)
@@ -43,6 +44,12 @@ export default {
       this.questions[currentQuestion].totalResponses2 += 1;
       QuizServices.updateQuestionResponses(this.questions[currentQuestion]);
       eventBus.$emit("change-display", 2)
+=======
+      eventBus.$emit("selected-option", 1)
+    },
+    handleClick2() {
+      eventBus.$emit("selected-option", 2)
+>>>>>>> develop
     },
   }
 };

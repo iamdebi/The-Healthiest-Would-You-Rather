@@ -9,7 +9,7 @@
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
       <div class="answer" v-if="this.show == false">
-        <answer-frame :questions="questions" :currentQuestion="this.currentQuestion"/>
+        <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
@@ -25,7 +25,7 @@ import {eventBus} from "./main.js";
 import QuizServices from "./services/QuizServices.js";
 import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
-import AnswerFrame from "./components/AnswerFrame.vue";
+import Answer from "./components/Answer.vue";
 import Intro from "./components/Intro.vue";
 
 export default {
@@ -48,7 +48,7 @@ export default {
     QuizServices.getUsers()
       .then(users => (this.users = users));
 
-    eventBus.$on("change-display", response => {
+    eventBus.$on("selected-option", response => {
       this.responses.push(response)
       this.nextDisplay();
     });
@@ -62,7 +62,7 @@ export default {
   components: {
     "question": Question,
     "summary-list": Summary,
-    "answer-frame": AnswerFrame,
+    "answer": Answer,
     "intro": Intro
   },
 

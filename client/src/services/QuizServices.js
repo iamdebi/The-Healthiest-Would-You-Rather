@@ -6,6 +6,15 @@ export default {
     return fetch(baseURL + "/questions").then(res => res.json());
   },
 
+  updateQuestionResponses(payload) {
+    id = payload._id
+    return fetch(baseURL + "/questions/" + id, {
+      method: "PUT",
+      body: JSON.strigify(payload),
+      headers: { "Content-Type": "application/json" }
+    }).then(res => res.json());
+  },
+
   // get all users
   getUsers() {
     return fetch(baseURL + "/users").then(res => res.json());
@@ -13,7 +22,7 @@ export default {
 
   // adds user to database
   postUser(payload) {
-    return fetch(baseURL, {
+    return fetch(baseURL + "/users", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: { "Content-Type": "application/json" }
@@ -22,7 +31,7 @@ export default {
 
   // deletes user from database
   deleteUser(id) {
-    return fetch(baseURL + id, {
+    return fetch(baseURL + "/users/" + id, {
       method: "DELETE"
     });
   },
@@ -30,7 +39,7 @@ export default {
   // updates user's details
   updateUser(payload) {
     id = payload._id;
-    return fetch(baseURL + id, {
+    return fetch(baseURL + "/users/" + id, {
       method: "UPDATE",
       body: JSON.stringify(payload),
       headers: { "Content-Type": "application/json" }
