@@ -35,10 +35,10 @@ export default {
 
   methods: {
     handleClick1() {
-      eventBus.$emit("change-display", 1)
+      eventBus.$emit("selected-option", 1)
     },
     handleClick2() {
-      eventBus.$emit("change-display", 2)
+      eventBus.$emit("selected-option", 2)
     },
   }
 };
