@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="question">
-    <h1>This is option 1 {{this.questions[currentQuestion].option1}}</h1>
+    <h1>Question: {{currentQuestion}} {{this.questions[currentQuestion].option1}}</h1>
     <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick"/>
     <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick"/>
     <button v-on:click="handleClick">Click</button>
