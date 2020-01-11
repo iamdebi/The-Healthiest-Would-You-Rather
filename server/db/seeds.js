@@ -2,12 +2,13 @@ use healthyquiz;
 
 db.dropDatabase();
 
+
 db.questions.insertMany([{
     option1: "250ml of ice cream",
     option2: "44g of butter",
     reponseText: "250ml of ice cream and 44g of butter have the same amount of fat",
-    url1: "@/assets/ice-cream.jpg",
-    url2: "@/assets/butter.jpg",
+    url1: "http://localhost:8080/img/ice-cream.jpg",
+    url2: "http://localhost:8080/img/butter.jpg",
     totalResponses1: 0,
     totalResponses2: 0
   },
@@ -75,9 +76,7 @@ db.questions.insertMany([{
 ]);
 
 db.users.insertMany([{
-    responses: [1, 2, 1, 1, 2, 2, 1, 2],
-    latitude: "55.865426",
-    longitude: "-4.257861"
-  },
-
-]);
+        responses: [1, 2, 1, 1, 2, 2, 1, 2],
+        latitude: "55.865426",
+        longitude: "-4.257861"
+      },

@@ -1,6 +1,7 @@
 <template lang="html">
   <div id="app">
-    <div class="QA" v-if="this.currentQuestion < 7">
+    <button type="button" name="button" v-on:click="nextQuestion()" v-if="this.currentQuestion == -1">Start</button>
+    <div class="QA" v-if="this.currentQuestion > -1 && this.currentQuestion < this.questions.length">
       <div class="question" v-if="this.show == true">
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
@@ -30,8 +31,8 @@ export default {
     return {
       users: [],
       questions:[],
-      show: true,
-      currentQuestion: 0
+      show: false,
+      currentQuestion: -1
     };
   },
 
