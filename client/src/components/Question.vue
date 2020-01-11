@@ -36,4 +36,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+img {
+  width:300px;
+  height:300px;
+  border-radius: 50%;
+}
 </style>
