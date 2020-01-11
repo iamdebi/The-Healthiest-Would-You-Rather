@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
-        <p>Summary of User data</p>
+      <summary :questions="this.questions"/>
     </div>
   </div>
 
@@ -21,6 +21,7 @@ import Answer from "./components/Answer.vue";
 import {eventBus} from "./main.js";
 import QuizServices from "./services/QuizServices.js";
 import Question from "./components/Question.vue";
+import Summary from "./components/Summary.vue";
 
 
 export default {
@@ -45,7 +46,8 @@ export default {
   },
 
   components: {
-    question: Question
+    "question": Question,
+    "summary": Summary
   },
 
   methods: {
