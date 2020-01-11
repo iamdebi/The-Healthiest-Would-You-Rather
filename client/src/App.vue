@@ -6,7 +6,6 @@
       </div>
       <div class="answer" v-if="this.show == false">
         <answer-frame :questions="questions" :currentQuestion="this.currentQuestion"/>
-        <button v-on:click="nextQuestion()">Next!</button>
       </div>
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
