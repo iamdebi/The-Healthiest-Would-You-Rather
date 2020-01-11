@@ -5,8 +5,7 @@
         <question :currentQuestion="this.currentQuestion"/>
       </div>
       <div class="answer" v-if="this.show == false">
-        <p >Answer</p>
-        <button v-on:click="nextQuestion()">Next!</button>
+        <answer-frame :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
@@ -17,12 +16,12 @@
 </template>
 
 <script>
-import Answer from "./components/Answer.vue";
+
 import {eventBus} from "./main.js";
 import QuizServices from "./services/QuizServices.js";
 import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
-
+import AnswerFrame from "./components/AnswerFrame.vue";
 
 export default {
   name: "app",
@@ -40,14 +39,18 @@ export default {
     .then(users => (this.users = users));
 
     eventBus.$on("change-display", display => {
-      this.nextDisplay()
+      this.nextDisplay();
+    });
+    eventBus.$on("next-question", display => {
+      this.nextQuestion();
     });
 
   },
 
   components: {
     "question": Question,
-    "summary": Summary
+    "summary": Summary,
+    "answer-frame": AnswerFrame
   },
 
   methods: {
@@ -59,7 +62,6 @@ export default {
       this.show = !this.show
     }
   },
-
 
 };
 </script>
