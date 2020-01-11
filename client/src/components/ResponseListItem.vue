@@ -1,12 +1,7 @@
 <template lang="html">
-  <div id="">
-    <tr class="response-item">
-      <td>{{ question.option1 }}</td>
-      <td>{{ question.totalResponses1 }}</td>
-      <td>{{ question.option2 }}</td>
-      <td>{{ question.totalResponses2 }}</td>
-    </tr>
-  </div>
+    <li>
+      {{ question.totalResponses1 }} people chose {{ question.option1 }} and {{ question.totalResponses2 }} chose {{ question.option2 }}.
+    </li>
 
 </template>
 
