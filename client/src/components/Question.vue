@@ -8,10 +8,10 @@
       <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick"/>
     </div>
     <div class="option2">
-    <h3>{{this.questions[currentQuestion].option2}}</h3>
-    <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick"/>
-   </div>
- </div>
+      <h3>{{this.questions[currentQuestion].option2}}</h3>
+      <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick"/>
+    </div>
+  </div>
 </template>
 
 <script>
