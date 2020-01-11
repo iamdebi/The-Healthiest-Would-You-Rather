@@ -44,9 +44,9 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "20g of ice cream",
-    option2: "40g of butter",
-    reponseText: "20g of ice cream and 40g of butter have the same amount of fat",
+    option1: "A blueberry muffins",
+    option2: "A slice of wholemeal bread",
+    reponseText: "1 blueberry muffin has the same fibre content as a slice of wholemeal bread",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
     totalResponses1: 0,
@@ -54,9 +54,9 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "20g of ice cream",
-    option2: "40g of butter",
-    reponseText: "20g of ice cream and 40g of butter have the same amount of fat",
+    option1: "8oz ribeye stake",
+    option2: "1 boiled egg",
+    reponseText: "Both options have around the same amount of cholesterol, however the cholesterol found within a boiled egg is better for your heart",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
     totalResponses1: 0,
@@ -64,9 +64,9 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "20g of ice cream",
-    option2: "40g of butter",
-    reponseText: "20g of ice cream and 40g of butter have the same amount of fat",
+    option1: "McDonalds double quarter pounder with cheese meal with fries and a banana milkshake",
+    option2: "3 avocados",
+    reponseText: "The calorie content of both of these is the same",
     url1: "@/assets/ice-cream.jpg",
     url2: "@/assets/butter.jpg",
     totalResponses1: 0,
