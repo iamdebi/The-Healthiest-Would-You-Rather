@@ -32,7 +32,7 @@ export default {
      return percentage.toFixed(1)
 },
   percentage2: function (){
-  return 100 - this.percentage1
+  return (100 - this.percentage1).toFixed(1)
 }
 
 
