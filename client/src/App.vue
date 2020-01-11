@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="summary" v-if="this.currentQuestion == 7">
-      <summary-list :questions="this.questions"/>
+      <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
   </div>
 
@@ -36,7 +36,8 @@ export default {
       users: [],
       questions:[],
       show: false,
-      currentQuestion: -1
+      currentQuestion: -1,
+      responses:[]
     };
   },
 
@@ -47,7 +48,8 @@ export default {
     QuizServices.getUsers()
       .then(users => (this.users = users));
 
-    eventBus.$on("change-display", display => {
+    eventBus.$on("change-display", response => {
+      this.responses.push(response)
       this.nextDisplay();
     });
 

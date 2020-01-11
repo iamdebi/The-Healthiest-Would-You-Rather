@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="">
     <ul>
-      <response-list-item v-for="(question, index) in this.questions" :question="question"/>
+      <response-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </ul>
     <!-- <button type="button" name="share">Share</button> -->
   </div>
@@ -13,7 +13,7 @@ import eventBus from "../main.js"
 import ResponseListItem from "./ResponseListItem.vue"
 export default {
   name: "summary-list",
-  props : ["questions"],
+  props : ["questions", "responses"],
   mounted() {
 
   },

@@ -5,11 +5,11 @@
     </div>
     <div class="option1">
       <h3>{{this.questions[currentQuestion].option1}}</h3>
-      <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick"/>
+      <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
     </div>
     <div class="option2">
       <h3>{{this.questions[currentQuestion].option2}}</h3>
-      <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick"/>
+      <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
     </div>
   </div>
 </template>
@@ -28,9 +28,12 @@ export default {
   },
 
   methods: {
-    handleClick() {
-      eventBus.$emit("change-display")
-    }
+    handleClick1() {
+      eventBus.$emit("change-display", 1)
+    },
+    handleClick2() {
+      eventBus.$emit("change-display", 2)
+    },
   }
 };
 </script>
