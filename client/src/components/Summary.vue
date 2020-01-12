@@ -3,25 +3,40 @@
     <ul>
       <response-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </ul>
-    <!-- <button type="button" name="share">Share</button> -->
+    <button type="button" name="share" v-on:click="displayShare = !displayShare" v-if="!displayShare">Share</button>
+    <transition name="fade">
+    <share-button v-if="displayShare" />
+  </transition>
   </div>
 
 </template>
 
 <script>
-import eventBus from "../main.js"
 import ResponseListItem from "./ResponseListItem.vue"
+import ShareButton from "./shareButton.vue"
 export default {
   name: "summary-list",
-  props : ["questions", "responses"],
-  mounted() {
 
+  data() {
+    return {
+      displayShare: false
+    }
   },
+
+  props : ["questions", "responses"],
+
   components: {
-    "response-list-item": ResponseListItem
+    "response-list-item": ResponseListItem,
+    "share-button": ShareButton
   }
 }
 </script>
 
 <style lang="css" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
