@@ -2,10 +2,10 @@
   <div id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
       <intro />
+      <button type="button" name="button" v-on:click="summary">Summary</button>
     </div>
 
-    <div class="QA" v-if="this.currentQuestion >= 1 && this.currentQuestion < this.questions.length">
-      <!-- change first number to 0 -->
+    <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
       <div class="question" v-if="this.show == true">
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
@@ -13,8 +13,7 @@
         <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
-    <div class="summary" v-if="this.currentQuestion == 0">
-      <!-- change number to 7 -->
+    <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
   </div>
@@ -75,6 +74,9 @@ export default {
     },
     nextDisplay() {
       this.show = !this.show
+    },
+    summary() {
+      this.currentQuestion = 7
     }
   },
 
