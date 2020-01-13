@@ -14,7 +14,7 @@
 
 <script>
 import ResponseListItem from "./ResponseListItem.vue"
-import ShareButton from "./shareButton.vue"
+import ShareButton from "./ShareButton.vue"
 import CanvasFunction from "../services/CanvasFunction.js"
 export default {
   name: "summary-list",
