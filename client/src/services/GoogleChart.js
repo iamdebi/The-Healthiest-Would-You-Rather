@@ -13,7 +13,7 @@ export default{
     var options = {
         width:500,
         height:400,
-        chartArea:{left:0,top:0}
+        chartArea:{left:20,top:0}
     };
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data, options);
