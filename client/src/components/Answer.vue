@@ -6,12 +6,18 @@
     <p>Percentage1: {{percentage1}}%</P>
     <p>Percentage2: {{percentage2}}%</P>
     <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
+    <GChart
+    type="PieChart"
+    :data="chartData"
+    :options="chartOptions"
+    />
   </div>
 </template>
 
 <script>
 import QuizServices from "../services/QuizServices.js";
 import { eventBus } from "../main.js";
+import { GChart } from 'vue-google-charts';
 
 export default {
   name: "answer",
@@ -19,7 +25,17 @@ export default {
 
   data() {
     return {
-    };
+      chartData: [['Option', 'Responses'],
+      ['Option 1', this.questions[this.currentQuestion].totalResponses1], ['Option 2', this.questions[this.currentQuestion].totalResponses2]],
+      chartOptions: {
+        title: 'Responses',
+        width: 600,
+        height: 480,
+        legend: {
+          position: 'none'
+        }
+      }
+    }
   },
   methods: {
     handleNextClick() {
@@ -35,6 +51,9 @@ export default {
     percentage2: function (){
     return (100 - this.percentage1).toFixed(1)
     }
+  },
+  components: {
+    GChart
   }
 };
 </script>
