@@ -3,9 +3,9 @@
   <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
       <intro :number="this.users.length + 149" />
-      <button type="button" name="button" v-on:click="summary">Summary</button>
+      <!--<button type="button" name="button" v-on:click="summary">Summary</button>
       <button v-on:click="openFullscreen();">Open Fullscreen</button>
-      <button v-on:click="closeFullscreen();">Close Fullscreen</button>
+      <button v-on:click="closeFullscreen();">Close Fullscreen</button>-->
     </div>
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
@@ -15,14 +15,14 @@
       <div class="answer" v-if="this.show == false">
         <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
+      <div class="pagination">
+        <pagination-dots :number="this.currentQuestion"/>
+      </div>
     </div>
+
 
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
-    </div>
-
-    <div class="pagination">
-      <pagination-dots :number="this.currentQuestion"/>
     </div>
   </div>
 
@@ -119,9 +119,9 @@ export default {
 
 <style lang="css">
 #app {
-   background-image: url("/img/gingham.jpg");
-   width:1440px;
-   height:100vh;
+  background-image: url("/img/gingham.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 button{
