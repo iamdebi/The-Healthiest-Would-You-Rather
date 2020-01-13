@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="answer-frame">
     <h1>{{this.questions[currentQuestion].responseText}}</h1>
-    <p>{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
-    <p>{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}} </p>
+    <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
+    <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
     <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
     <GChart
     type="PieChart"
@@ -57,4 +57,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+button{
+  padding:12px;
+  border-radius: 10px;
+}
 </style>

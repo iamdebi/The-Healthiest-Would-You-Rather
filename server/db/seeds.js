@@ -15,7 +15,7 @@ db.questions.insertMany([{
 
   {
     option1: "7 sugar cubes",
-    option2: "1 can of coke",
+    option2: "A can of coke",
     responseText: "Drinking a can of coke is the same as eating 7 sugar cubes",
     url1: "http://localhost:8080/img/sugar-cubes.jpeg",
     url2: "http://localhost:8080/img/coke.jpg",
@@ -24,9 +24,9 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "1 serving of ready made pasta sauce",
+    option1: "A serving of ready made pasta sauce",
     option2: "1.5 teaspoons of salt",
-    responseText: "1 serving of ready made pasta sauce contains 1.5g of salt",
+    responseText: "A serving of ready made pasta sauce contains 1.5g of salt",
     url1: "http://localhost:8080/img/pasta-sauce.jpg",
     url2: "http://localhost:8080/img/salt.jpg",
     totalResponses1: 132,
@@ -55,7 +55,7 @@ db.questions.insertMany([{
 
   {
     option1: "8oz ribeye steak",
-    option2: "1 boiled egg",
+    option2: "A boiled egg",
     responseText: "Both options have around the same amount of cholesterol, however the cholesterol found within a boiled egg is better for your heart",
     url1: "http://localhost:8080/img/steak.webp",
     url2: "http://localhost:8080/img/egg.jpg",
