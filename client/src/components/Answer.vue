@@ -1,11 +1,22 @@
 <template lang="html">
-  <div class="answer-frame">
+  <div class="answer-main">
     <div class="animated animatedFadeInUp fadeInUp">
-      <h1>{{this.questions[currentQuestion].responseText}}</h1>
-      <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
-      <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
-      <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
+      <div class="answer-heading">
+        <h1>{{this.questions[currentQuestion].responseText}}</h1>
+      </div>
       <div id='chart_div'></div>
+      <div class="answer-stats">
+        <div class="answer-stats-1">
+         <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
+        </div>
+       <div class="answer-stats-2">
+         <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
+       </div>
+     </div>
+     <div class="clear"></div>
+     <div class="next-button"
+        <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
+     </div>
     </div>
   </div>
 </template>
@@ -45,8 +56,38 @@ export default {
 
 <style lang="css" scoped>
 
-#chart_div{
-  height: 300px;
+.answer-main {
+    width: 900px;
+    padding:20px;
+    height:100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(90deg, #1d64f0 0%, #1ad5fd 100%);
+  }
+
+  .answer-heading h1 {
+      font-family: Baloo Bhai;
+      font-size: 36px;
+      color: #ffffff;
+      line-height: 42px;
+      text-align: center;
+  }
+
+#chart_div {
+  float:left;
+  height: 500px;
+}
+
+.answer-stats{
+  float:right;
+  padding:30px;
+}
+
+.clear {
+  clear:left;
+}
+
+.next-button {
+  float:right
 }
 
 
