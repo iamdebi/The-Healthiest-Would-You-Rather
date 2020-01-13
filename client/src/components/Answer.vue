@@ -4,16 +4,13 @@
     <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
     <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
     <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
-    <GChart
-    type="PieChart"
-    :data="chartData"
-    :options="chartOptions"
-    />
+    <div id='chart_div'></div>
   </div>
 </template>
 
 <script>
 import QuizServices from "../services/QuizServices.js";
+import GoogleChart from "../services/GoogleChart.js";
 import { eventBus } from "../main.js";
 import { GChart } from 'vue-google-charts';
 
@@ -23,21 +20,22 @@ export default {
 
   data() {
     return {
-      chartData: [['Option', 'Responses'],
-      ['Option 1', this.questions[this.currentQuestion].totalResponses1], ['Option 2', this.questions[this.currentQuestion].totalResponses2]],
-      chartOptions: {
-        title: 'Responses',
-        width: 600,
-        height: 480,
-        legend: {
-          position: 'none'
-        }
-      }
+      // chartData: [['Option', 'Responses'],
+      // ['Option 1', this.questions[this.currentQuestion].totalResponses1], ['Option 2', this.questions[this.currentQuestion].totalResponses2]],
+      // chartOptions: {
+      //   title: 'Responses',
+      //   width: 600,
+      //   height: 480,
+      //   legend: {
+      //     position: 'none'
+      //   }
+      // }
     }
   },
   methods: {
     handleNextClick() {
       eventBus.$emit("next-question")
+
     }
   },
   computed: {
@@ -51,7 +49,10 @@ export default {
     }
   },
   components: {
-    GChart
+    GoogleChart
+  },
+  mounted() {
+    GoogleChart.drawChart(this.percentage1)
   }
 };
 </script>
@@ -60,5 +61,8 @@ export default {
 button{
   padding:12px;
   border-radius: 10px;
+}
+#chart_div{
+  height: 300px;
 }
 </style>
