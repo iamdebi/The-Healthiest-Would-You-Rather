@@ -14,6 +14,7 @@
 <script>
 import ResponseListItem from "./ResponseListItem.vue"
 import ShareButton from "./shareButton.vue"
+import CanvasFunction from "../services/CanvasFunction.js"
 export default {
   name: "summary-list",
 
@@ -27,7 +28,8 @@ export default {
 
   components: {
     "response-list-item": ResponseListItem,
-    "share-button": ShareButton
+    "share-button": ShareButton,
+    "canvas-function": CanvasFunction
   }
 }
 </script>

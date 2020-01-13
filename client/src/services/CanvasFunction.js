@@ -4,7 +4,9 @@ export default {
   takeScreenshot() {
     html2canvas(document.querySelector(".summary"))
     //this grabs the div with class summary then
-    .then(canvas => {document.body.appendChild(canvas)})
-    // this adds it to the webpage don't know what to do with the div
+    .then(a => {
+      a.href = canvas.toDataURL("image/jpeg")
+      a.download = 'screenshot.jpg';
+    })
   }
 };
