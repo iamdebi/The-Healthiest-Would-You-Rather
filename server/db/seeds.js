@@ -14,13 +14,13 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "1 can of coke",
-    option2: "7 sugar cubes",
-    responseText: "1 can of coke is the same as eating 7 sugar cubes",
-    url1: "http://localhost:8080/img/coke.jpg",
-    url2: "http://localhost:8080/img/sugar-cubes.jpeg",
-    totalResponses1: 124,
-    totalResponses2: 26
+    option1: "7 sugar cubes",
+    option2: "1 can of coke",
+    responseText: "Drinking a can of coke is the same as eating 7 sugar cubes",
+    url1: "http://localhost:8080/img/sugar-cubes.jpeg",
+    url2: "http://localhost:8080/img/coke.jpg",
+    totalResponses1: 24,
+    totalResponses2: 126
   },
 
   {
@@ -34,7 +34,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "1 portion of cooked lentils",
+    option1: "A portion of cooked lentils",
     option2: "A hamburger",
     responseText: "55g of cooked lentils has nearly 18g of protein, more than the amount in a hamburger",
     url1: "http://localhost:8080/img/lentils.jpg",
@@ -44,13 +44,13 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "A blueberry muffin",
-    option2: "A slice of wholemeal bread",
+    option1: "A slice of wholemeal bread",
+    option2: "A blueberry muffin",
     responseText: "1 blueberry muffin has the same fibre content as a slice of wholemeal bread",
-    url1: "http://localhost:8080/img/muffin.jpg",
-    url2: "http://localhost:8080/img/bread.jpeg",
-    totalResponses1: 108,
-    totalResponses2: 42
+    url1: "http://localhost:8080/img/bread.jpeg",
+    url2: "http://localhost:8080/img/muffin.jpg",
+    totalResponses1: 42,
+    totalResponses2: 108
   },
 
   {
@@ -66,7 +66,7 @@ db.questions.insertMany([{
   {
     option1: "McDonalds double quarter pounder with cheese meal with fries and a banana milkshake",
     option2: "3 avocados",
-    responseText: "The calorie content of both of these is the same",
+    responseText: "The calorie content of both of those options is the same",
     url1: "http://localhost:8080/img/mcdonalds.jpg",
     url2: "http://localhost:8080/img/avocados.jpg",
     totalResponses1: 81,
