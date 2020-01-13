@@ -1,33 +1,29 @@
 <template lang="html">
-  <transition name="slide">
-    <div class="container">
-      <div class="question">
-        <div class="animated animatedFadeInUp fadeInUp">
-          <div class="title">
-            <h1>Question: {{currentQuestion+1}} </h1>
-          </div>
-        </div>
-        <div class="animated animatedFadeInUp fadeInUp">
-          <div class="would-you-rather">
-            <h2>Would you rather eat...?</h2>
-          </div>
-          <div class="or">
-            <p class="or-text">OR</p>
-          </div>
-        </div>
-        <div class="question-container animated animatedFadeInUp fadeInUp">
-          <div class="option1">
-            <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
-            <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
-          </div>
-          <div class="option2">
-            <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
-            <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
-          </div>
-        </div>
+  <div class="question">
+    <div class="animated animatedFadeInUp fadeInUp">
+      <div class="title">
+        <h1>Question: {{currentQuestion+1}} </h1>
       </div>
+    </div>
+    <div class="animated animatedFadeInUp fadeInUp">
+      <div class="would-you-rather">
+        <h2>Would you rather eat...?</h2>
+      </div>
+      <div class="or">
+        <p class="or-text">OR</p>
+      </div>
+    </div>
+    <div class="question-container animated animatedFadeInUp fadeInUp">
+      <div class="option1">
+        <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+        <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+      </div>
+      <div class="option2">
+        <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+        <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
+      </div>
+    </div>
   </div>
-  </transition>
 </template>
 
 <script>
@@ -53,7 +49,7 @@ export default {
 };
 </script>
 
-<style lang="css" >
+<style lang="css" scoped>
 
 .question {
   max-width:700px;
@@ -76,6 +72,7 @@ img {
 .option-text {
   align-content: center;
 }
+
 
 @keyframes fadeInUp {
     from {
