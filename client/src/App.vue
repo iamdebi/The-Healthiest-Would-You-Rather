@@ -13,6 +13,7 @@
         <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
+    
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>

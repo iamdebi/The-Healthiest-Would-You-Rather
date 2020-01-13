@@ -5,8 +5,9 @@
     </ul>
     <button type="button" name="share" v-on:click="displayShare = !displayShare" v-if="!displayShare">Share</button>
     <transition name="fade">
-    <share-button v-if="displayShare" />
-  </transition>
+      <share-button v-if="displayShare" />
+    </transition>
+    <button type="button" v-on:click="handleScreenshot">Screenshot</button>
   </div>
 
 </template>
@@ -30,6 +31,11 @@ export default {
     "response-list-item": ResponseListItem,
     "share-button": ShareButton,
     "canvas-function": CanvasFunction
+  },
+  methods: {
+    handleScreenshot() {
+      CanvasFunction.takeScreenshot()
+    }
   }
 }
 </script>
