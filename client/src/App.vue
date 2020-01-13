@@ -4,7 +4,8 @@
       <intro />
     </div>
 
-    <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
+    <div class="QA" v-if="this.currentQuestion >= 1 && this.currentQuestion < this.questions.length">
+      <!-- change first number to 0 -->
       <div class="question" v-if="this.show == true">
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
@@ -12,7 +13,8 @@
         <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
-    <div class="summary" v-if="this.currentQuestion == 7">
+    <div class="summary" v-if="this.currentQuestion == 0">
+      <!-- change number to 7 -->
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
   </div>
