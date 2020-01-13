@@ -9,14 +9,16 @@
     <div class="or">
       <p class="or-text">OR</p>
     </div>
-    <div class="option1">
-      <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
-      <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
-    </div>
-    <div class="option2">
-      <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
-      <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
-    </div>
+    <transition name="slide-fade">
+      <div class="option1">
+        <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+        <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+      </div>
+      <div class="option2">
+        <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+        <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -48,7 +50,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="css" >
 
 .question {
   max-width:700px;
@@ -70,5 +72,17 @@ img {
 
 .option-text {
   align-content: center;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

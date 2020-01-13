@@ -62,8 +62,6 @@ export default {
       this.nextQuestion();
     });
 
-    this.openFullscreen().then()
-
 },
 
   components: {
@@ -72,12 +70,7 @@ export default {
     "answer": Answer,
     "intro": Intro
   },
-
-// updated: {
-//   this.openFullscreen()
-// },
-
-
+  
   methods: {
     nextQuestion() {
       this.currentQuestion += 1
