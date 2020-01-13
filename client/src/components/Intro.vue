@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="app">
+  <div class="intro-main">
     <h1>Healthy Quiz</h1>
     <p>Helping you make better food choices</p>
     <button type="button" v-on:click="handleStartButtonClick()">Start</button>
@@ -21,5 +21,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.intro-main {
+  width: 900px;
+  padding:20px;
+  margin: 0 auto;
+}
 
 </style>

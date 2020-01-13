@@ -2,10 +2,10 @@
 
   <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
-      <intro :number="this.users.length + 149"/>
+      <intro :number="this.users.length + 149" />
       <button type="button" name="button" v-on:click="summary">Summary</button>
       <button v-on:click="openFullscreen();">Open Fullscreen</button>
-<button v-on:click="closeFullscreen();">Close Fullscreen</button>
+      <button v-on:click="closeFullscreen();">Close Fullscreen</button>
     </div>
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
@@ -118,6 +118,11 @@ export default {
 </script>
 
 <style lang="css">
+#app {
+   background-image: url("/img/gingham.jpg");
+   width:1440px;
+   height:100vh;
+}
 
 button{
   padding:12px;
