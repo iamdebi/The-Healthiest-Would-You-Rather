@@ -57,11 +57,8 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-button{
-  padding:12px;
-  border-radius: 10px;
-}
+<style lang="css" scoped>
+
 #chart_div{
   height: 300px;
 }

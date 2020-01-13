@@ -2,7 +2,7 @@
 
   <div  v-on:load="openFullscreen()" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
-      <intro />
+      <intro :number="this.users.length + 149"/>
       <button type="button" name="button" v-on:click="summary">Summary</button>
       <button v-on:click="openFullscreen();">Open Fullscreen</button>
 <button v-on:click="closeFullscreen();">Close Fullscreen</button>
@@ -118,5 +118,11 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+</style>
+<style lang="css">
+button{
+  padding:12px;
+  border-radius: 10px;
 }
 </style>
