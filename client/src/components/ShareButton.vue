@@ -29,10 +29,7 @@
         </svg>
         </div>Instagram</div>
     </a>
-
-
-
-
+  
   </div>
 </template>
 
