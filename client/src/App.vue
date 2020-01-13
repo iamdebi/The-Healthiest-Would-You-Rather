@@ -20,6 +20,10 @@
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
+
+    <div class="pagination">
+      <pagination-dots :number="this.currentQuestion"/>
+    </div>
   </div>
 
 </template>
@@ -32,6 +36,7 @@ import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
 import Answer from "./components/Answer.vue";
 import Intro from "./components/Intro.vue";
+import PaginationDots from "./components/PaginationDots.vue";
 
 export default {
   name: "app",
@@ -70,7 +75,8 @@ export default {
     "question": Question,
     "summary-list": Summary,
     "answer": Answer,
-    "intro": Intro
+    "intro": Intro,
+    "pagination-dots": PaginationDots
   },
 
 // updated: {
