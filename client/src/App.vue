@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <div  v-on:load="openFullscreen()" id="app">
+  <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
       <intro :number="this.users.length + 149"/>
       <button type="button" name="button" v-on:click="summary">Summary</button>
@@ -70,7 +70,7 @@ export default {
     "answer": Answer,
     "intro": Intro
   },
-  
+
   methods: {
     nextQuestion() {
       this.currentQuestion += 1
@@ -111,7 +111,8 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;

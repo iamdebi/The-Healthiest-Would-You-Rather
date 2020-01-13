@@ -1,25 +1,33 @@
 <template lang="html">
-  <div class="question">
-    <div class="title">
-      <h1>Question: {{currentQuestion+1}} </h1>
-    </div>
-    <div class="would-you-rather">
-      <h2>Would you rather eat...?</h2>
-    </div>
-    <div class="or">
-      <p class="or-text">OR</p>
-    </div>
-    <transition name="slide-fade">
-      <div class="option1">
-        <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
-        <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+  <transition name="slide">
+    <div class="container">
+      <div class="question">
+        <div class="animated animatedFadeInUp fadeInUp">
+          <div class="title">
+            <h1>Question: {{currentQuestion+1}} </h1>
+          </div>
+        </div>
+        <div class="animated animatedFadeInUp fadeInUp">
+          <div class="would-you-rather">
+            <h2>Would you rather eat...?</h2>
+          </div>
+          <div class="or">
+            <p class="or-text">OR</p>
+          </div>
+        </div>
+        <div class="question-container animated animatedFadeInUp fadeInUp">
+          <div class="option1">
+            <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+            <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+          </div>
+          <div class="option2">
+            <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+            <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
+          </div>
+        </div>
       </div>
-      <div class="option2">
-        <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
-        <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
-      </div>
-    </transition>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -29,11 +37,6 @@ import { eventBus } from "../main.js";
 export default {
   name: "question",
   props: ["currentQuestion", "questions"],
-
-  data() {
-    return {
-    };
-  },
 
   methods: {
     handleClick1() {
@@ -74,15 +77,43 @@ img {
   align-content: center;
 }
 
-.slide-fade-enter-active {
-  transition: all .3s ease;
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
 }
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
 }
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
 </style>

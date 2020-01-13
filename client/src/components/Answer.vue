@@ -1,11 +1,13 @@
 <template lang="html">
-  <div class="answer-frame">
-    <h1>{{this.questions[currentQuestion].responseText}}</h1>
-    <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
-    <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
-    <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
-    <div id='chart_div'></div>
-  </div>
+  <transition name="slide">
+    <div class="answer-frame">
+      <h1>{{this.questions[currentQuestion].responseText}}</h1>
+      <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
+      <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
+      <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
+      <div id='chart_div'></div>
+    </div>
+</transition>
 </template>
 
 <script>
