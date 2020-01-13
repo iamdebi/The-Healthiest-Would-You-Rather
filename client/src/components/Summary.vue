@@ -5,9 +5,9 @@
     </ul>
     <button type="button" name="share" v-on:click="displayShare = !displayShare" v-if="!displayShare">Share</button>
     <transition name="fade">
-      <share-button v-if="displayShare" />
+      <share-button v-if="displayShare" v-on:click="handleScreenshot" />
     </transition>
-    <button type="button" v-on:click="handleScreenshot">Screenshot</button>
+    <!-- <button type="button" v-on:click="handleScreenshot">Screenshot</button> -->
   </div>
 
 
@@ -37,23 +37,6 @@ export default {
     handleScreenshot() {
       CanvasFunction.takeScreenshot()
     }
-  },
-
-  created() {
-  fetch('test.json')
-    .then(resp => resp.json())
-    .then(items => {
-      this.items = items;
-      const descEl = document.querySelector("head meta[property='og:image']");
-      const titleEl = document.querySelector('head title');
-
-      descEl.setAttribute('content', items[0]['meta-desc']);
-      titleEl.textContent = items[0]['meta-title'];
-    })
-  },
-
-  computed: {
-
   }
 }
 </script>
