@@ -20,13 +20,14 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 
 .intro-main {
   width: 900px;
   padding:20px;
+  height:100vh;
   margin: 0 auto;
-  background-image: linear-gradient(red, yellow);
+  background-image: linear-gradient(90deg, #0dd41a 0%, #86fc6f 100% );
 }
 
 </style>

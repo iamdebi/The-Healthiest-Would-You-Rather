@@ -52,8 +52,12 @@ export default {
 <style lang="css" scoped>
 
 .question {
-  max-width:700px;
-}
+    width: 900px;
+    padding:20px;
+    height:100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(90deg, #1d64f0 0%, #1ad5fd 100%);
+  }
 
 img {
   width:300px;
