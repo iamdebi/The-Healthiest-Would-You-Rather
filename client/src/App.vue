@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
-      <intro />
+      <intro :number="this.users.length + 149"/>
       <button type="button" name="button" v-on:click="summary">Summary</button>
     </div>
 
@@ -13,7 +13,7 @@
         <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
-    
+
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
@@ -91,5 +91,11 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+</style>
+<style lang="css">
+button{
+  padding:12px;
+  border-radius: 10px;
 }
 </style>

@@ -1,11 +1,11 @@
 <template lang="html">
   <div class="">
-    <h1>Title!</h1>
+    <h1>Healthy Quiz</h1>
+    <p>Helping you make better food choices</p>
     <button type="button" v-on:click="handleStartButtonClick()">Start</button>
+    <p>{{this.number}} people have taken this quiz</p>
   </div>
 </template>
-
-
 
 <script>
 import {eventBus} from "../main.js"
@@ -15,7 +15,8 @@ export default {
     handleStartButtonClick() {
       eventBus.$emit("next-question")
     }
-  }
+  },
+  props: ["number"]
 }
 </script>
 
