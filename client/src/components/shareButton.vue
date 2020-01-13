@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="">
     <!-- Sharingbutton Facebook -->
-    <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080" target="_blank" rel="noopener" aria-label="Facebook">
+    <a class="resp-sharing-button__link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2F&amp;src=sdkpreparse" target="_blank" rel="noopener" aria-label="Facebook">
       <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm3.6 11.5h-2.1v7h-3v-7h-2v-2h2V8.34c0-1.1.35-2.82 2.65-2.82h2.35v2.3h-1.4c-.25 0-.6.13-.6.66V9.5h2.34l-.24 2z"/></svg></div>Facebook</div>
     </a>
@@ -19,7 +19,8 @@
     </a>
 
     <!-- Sharingbutton LinkedIn -->
-    <a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A8080&amp;title=Take%20the%20healthy%20quiz%20and%20see%20how%20you%20score&amp;summary=Take%20the%20healthy%20quiz%20and%20see%20how%20you%20score&amp;source=http%3A%2F%2Flocalhost%3A8080" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <a class="resp-sharing-button__link" href="http://www.linkedin.com/shareArticle?mini=true&url=https://developers.facebook.com;title=Take%20the%20healthy%20quiz%20and%20see%20how%20you%20score&amp;summary=Take%20the%20healthy%20quiz%20and%20see%20how%20you%20score&amp;source=https://developers.facebook.com"
+     target="_blank" rel="noopener" aria-label="LinkedIn">
       <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
         <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
             <path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M9.5,16.5h-2v-7h2V16.5z M8.5,7.5 c-0.553,0-1-0.448-1-1c0-0.552,0.447-1,1-1s1,0.448,1,1C9.5,7.052,9.053,7.5,8.5,7.5z M18.5,16.5h-3V13c0-0.277-0.225-0.5-0.5-0.5 c-0.276,0-0.5,0.223-0.5,0.5v3.5h-3c0,0,0.031-6.478,0-7h3v0.835c0,0,0.457-0.753,1.707-0.753c1.55,0,2.293,1.12,2.293,3.296V16.5z" />
@@ -29,12 +30,15 @@
     <!-- Sharingbutton Instagram -->
     <a class="resp-sharing-button__link" href="" target="_blank" rel="noopener" aria-label="Instagram">
       <div class="resp-sharing-button resp-sharing-button--instagram resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+        <svg class="instagram-logo" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+	 viewBox="0 0 551.034 551.034" style="enable-background:new 0 0 551.034 551.034;" xml:space="preserve">
+		      <path class="logo" id="XMLID_17_" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722 c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156 C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156 c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722 c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
+		      <path id="XMLID_81_" fill="#fff" d="M275.517,133C196.933,133,133,196.933,133,275.516 s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6 c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083 C362.6,323.611,323.611,362.6,275.517,362.6z"/>
+		      <circle id="XMLID_83_" fill="#fff" cx="418.306" cy="134.072" r="34.149"/>
+
+        </svg>
         </div>Instagram</div>
     </a>
-
-
-
-
 
   </div>
 </template>
@@ -74,17 +78,6 @@ export default {
   vertical-align: top;
 }
 
-.resp-sharing-button--small svg {
-  margin: 0;
-  vertical-align: middle
-}
-
-/* Non solid icons get a stroke */
-.resp-sharing-button__icon {
-  stroke: #fff;
-  fill: none;
-}
-
 /* Solid icons get a fill */
 .resp-sharing-button__icon--solid,
 .resp-sharing-button__icon--solidcircle {
@@ -112,21 +105,26 @@ export default {
   border-color: #2795e9;
 }
 
-.resp-sharing-button--facebook {
+.resp-sharing-button--facebook,
+.fb-share-button {
   background-color: #3b5998;
 }
 
-.resp-sharing-button--facebook:hover {
+.resp-sharing-button--facebook:hover,
+.fb-share-button:hover {
   background-color: #2d4373;
 }
 
-.resp-sharing-button--facebook {
+.resp-sharing-button--facebook,
+.fb-share-button {
   background-color: #3b5998;
   border-color: #3b5998;
 }
 
 .resp-sharing-button--facebook:hover,
-.resp-sharing-button--facebook:active {
+.resp-sharing-button--facebook:active ,
+.fb-share-button:hover,
+.fb-share-button:active{
   background-color: #2d4373;
   border-color: #2d4373;
 }
@@ -159,7 +157,8 @@ export default {
 }
 
 .resp-sharing-button--instagram {
-  background-color: #3b5998;
+  background: #d6249f;
+  background: radial-gradient(circle at 0% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 
 .resp-sharing-button--instagram:hover {

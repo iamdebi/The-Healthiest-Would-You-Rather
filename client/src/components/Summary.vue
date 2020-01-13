@@ -10,6 +10,7 @@
     <button type="button" v-on:click="handleScreenshot">Screenshot</button>
   </div>
 
+
 </template>
 
 <script>
@@ -36,6 +37,23 @@ export default {
     handleScreenshot() {
       CanvasFunction.takeScreenshot()
     }
+  },
+
+  created() {
+  fetch('test.json')
+    .then(resp => resp.json())
+    .then(items => {
+      this.items = items;
+      const descEl = document.querySelector("head meta[property='og:image']");
+      const titleEl = document.querySelector('head title');
+
+      descEl.setAttribute('content', items[0]['meta-desc']);
+      titleEl.textContent = items[0]['meta-title'];
+    })
+  },
+
+  computed: {
+
   }
 }
 </script>
