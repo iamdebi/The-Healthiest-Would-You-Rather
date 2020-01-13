@@ -1,10 +1,8 @@
 <template lang="html">
   <div class="answer-frame">
     <h1>{{this.questions[currentQuestion].responseText}}</h1>
-    <p>This many people chose option1: {{this.questions[currentQuestion].totalResponses1}}</p>
-    <p>This many people chose option2: {{this.questions[currentQuestion].totalResponses2}}</p>
-    <p>Percentage1: {{percentage1}}%</P>
-    <p>Percentage2: {{percentage2}}%</P>
+    <p>{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
+    <p>{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}} </p>
     <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
     <GChart
     type="PieChart"
