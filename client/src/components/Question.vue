@@ -100,9 +100,9 @@ img {
 }
 
 .animated {
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 3s;
     -webkit-animation-fill-mode: both
 }
 

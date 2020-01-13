@@ -1,5 +1,5 @@
 <template lang="html">
-  <transition name="slide">
+  <div class="animated animatedFadeInUp fadeInUp">
     <div class="answer-frame">
       <h1>{{this.questions[currentQuestion].responseText}}</h1>
       <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
@@ -7,7 +7,7 @@
       <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
       <div id='chart_div'></div>
     </div>
-</transition>
+  </div>
 </template>
 
 <script>
@@ -20,30 +20,14 @@ export default {
   name: "answer",
   props: ["currentQuestion", "questions"],
 
-  data() {
-    return {
-      // chartData: [['Option', 'Responses'],
-      // ['Option 1', this.questions[this.currentQuestion].totalResponses1], ['Option 2', this.questions[this.currentQuestion].totalResponses2]],
-      // chartOptions: {
-      //   title: 'Responses',
-      //   width: 600,
-      //   height: 480,
-      //   legend: {
-      //     position: 'none'
-      //   }
-      // }
-    }
-  },
   methods: {
     handleNextClick() {
       eventBus.$emit("next-question")
-
     }
   },
   computed: {
     percentage1: function (){
      let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
-     //let rounded = Math.round( percentage * 10 ) / 10
      return percentage.toFixed(1)
     },
     percentage2: function (){
