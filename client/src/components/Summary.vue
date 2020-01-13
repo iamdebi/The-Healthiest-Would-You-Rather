@@ -3,14 +3,12 @@
     <ul>
       <response-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </ul>
-    <button type="button" name="share" v-on:click="displayShare = !displayShare" v-if="!displayShare">Share</button>
+    <button type="button" name="share" v-on:click="handleScreenshot(); displayShare = !displayShare " v-if="!displayShare">Share</button>
     <transition name="fade">
       <share-button v-if="displayShare" v-on:click="handleScreenshot" />
     </transition>
     <!-- <button type="button" v-on:click="handleScreenshot">Screenshot</button> -->
   </div>
-
-
 </template>
 
 <script>
@@ -33,6 +31,7 @@ export default {
     "share-button": ShareButton,
     "canvas-function": CanvasFunction
   },
+
   methods: {
     handleScreenshot() {
       CanvasFunction.takeScreenshot()
