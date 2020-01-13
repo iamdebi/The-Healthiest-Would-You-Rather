@@ -26,6 +26,7 @@ export default {
   width: 900px;
   padding:20px;
   margin: 0 auto;
+  background-image: linear-gradient(red, yellow);
 }
 
 </style>
