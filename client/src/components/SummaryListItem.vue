@@ -75,10 +75,10 @@ export default {
     padding-right: 20px;
   }
   .chosen{
-    border: 10px solid rgba(13,212,26,.62);
+    border: 8px solid rgba(13,212,26,.62);
   }
   .not-chosen{
-    border: 10px solid #6c74dd;
+    border: 8px solid #6c74dd;
   }
 
   .option1-text, .option2-text{
