@@ -67,10 +67,12 @@ img {
 
 .option1 {
   float:left;
+    padding-left: 195px;
 }
 
 .option2 {
   float:right;
+    padding-right: 195px;
 }
 
 .option-text {
