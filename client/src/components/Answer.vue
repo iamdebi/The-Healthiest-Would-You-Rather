@@ -113,7 +113,8 @@ export default {
   }
 
   .answer-stats{
-    padding: 125px 0 0 0;
+    padding-top: 125px;
+    margin-right: 100px;
   }
 
   .answer-stats-1 {
@@ -166,6 +167,7 @@ export default {
   .button-container{
     display: flex;
     justify-content: flex-end;
+    margin-top: 150px;
   }
 
   #chart_div {
