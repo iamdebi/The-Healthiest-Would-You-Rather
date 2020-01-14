@@ -90,21 +90,32 @@ img:hover {
 
 .option1 {
   float:left;
-    padding-left: 195px;
+  padding-left: 195px;
 }
 
 .option2 {
   float:right;
-    padding-right: 195px;
+  padding-right: 195px;
+}
+
+.option1-text{
+  display: flex;
+  justify-content: center;
+}
+
+.option2-text{
+  display: flex;
+  justify-content: center;
 }
 
 .option-text {
 font-family: Baloo Bhai;
-font-size: 48px;
+font-size: 39px;
 color: #f0f086;
 text-align: center;
+margin-top: 0;
+width: 80%;
 }
-
 
 @keyframes fadeInUp {
     from {
