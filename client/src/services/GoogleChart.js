@@ -1,15 +1,15 @@
 
 export default{
-  drawChart(percentage, colour1, colour2, option1, option2) {
+  drawChart(question, colour1, colour2) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Option');
     data.addColumn('number', 'Responses');
 
     data.addRows(2);
-    data.setValue(0, 0, option1);
-    data.setValue(0, 1, 0.0);
-    data.setValue(1, 0, option2);
-    data.setValue(1, 1, 100.0);
+    data.setValue(0, 0, question.option1);
+    // data.setValue(0, 1, 0.0);
+    data.setValue(1, 0, question.option2);
+    // data.setValue(1, 1, 100.0);
 
     var options = {
       colors: [colour1, colour2],
@@ -28,10 +28,10 @@ export default{
     var percent = 0;
     var handler = setInterval(function(){
         percent += 1;
-        data.setValue(0, 1, percent);
-        data.setValue(1, 1, 100 - percent);
+        data.setValue(0, 1, (percent).toFixed(0));
+        data.setValue(1, 1, (question.totalResponses1+question.totalResponses2-percent).toFixed(0));
         chart.draw(data, options);
-    if (percent >= percentage)
+    if (percent >= question.totalResponses1)
         clearInterval(handler);
     }, 30);
   },

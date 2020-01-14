@@ -72,11 +72,11 @@ export default {
   computed: {
     percentage1: function (){
      let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
-     return percentage.toFixed(0)
+     return percentage.toFixed(1)
     },
 
     percentage2: function (){
-    return (100 - this.percentage1).toFixed(0)
+    return (100 - this.percentage1).toFixed(1)
     },
 
     chosen: function (){
@@ -102,10 +102,10 @@ export default {
   },
   mounted() {
     if (this.colour) {
-      GoogleChart.drawChart(this.percentage1, "#86fc6f", "#6c74dd", this.questions[this.currentQuestion].option1, this.questions[this.currentQuestion].option2)
+      GoogleChart.drawChart(this.questions[this.currentQuestion], "#86fc6f", "#6c74dd")
     }
     else {
-      GoogleChart.drawChart(this.percentage1, "#6c74dd", "#86fc6f", this.questions[this.currentQuestion].option1, this.questions[this.currentQuestion].option2)
+      GoogleChart.drawChart(this.questions[this.currentQuestion], "#6c74dd", "#86fc6f")
     }
 
   }
