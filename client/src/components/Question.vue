@@ -114,7 +114,7 @@ font-size: 39px;
 color: #f0f086;
 text-align: center;
 margin-top: 0;
-width: 80%;
+width: 435px;;
 }
 
 @keyframes fadeInUp {

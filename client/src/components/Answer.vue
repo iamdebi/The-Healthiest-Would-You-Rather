@@ -26,9 +26,9 @@
       </div>
     </div>
     <div style="clear:both;" />
-    <div class="pagination">
-      <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
-    </div>
+      <div class="pagination">
+        <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
+      </div>
   </div>
 </template>
 
