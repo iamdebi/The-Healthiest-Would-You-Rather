@@ -17,11 +17,17 @@
         <div id='chart_div'>
         </div>
         <div class="answer-stats">
+          <div v-bind:class="[chosen ? 'chosen-text' : 'not-chosen-text']">
+            <p>You Chose This!</p>
+          </div>
           <div class="answer-stats-1">
             <div class="big-percentage-1">{{percentage1}}%
             </div>
             <div class="stats-text-1">chose {{this.questions[currentQuestion].option1}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses1}} people)</span>
             </div>
+          </div>
+          <div v-bind:class="[chosen ? 'not-chosen-text' : 'chosen-text']">
+            <p>You Chose This!</p>
           </div>
           <div class="answer-stats-2">
             <div class="big-percentage-2">{{percentage2}}%
@@ -30,6 +36,7 @@
             </div>
           </div>
         </div>
+        <div style="clear:both;" />
         <div class="button-container">
           <button class="btn" type="button" v-on:click="handleNextClick">
             <span class="circle">
@@ -68,11 +75,14 @@ export default {
      let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
      return percentage.toFixed(0)
     },
+
     percentage2: function (){
     return (100 - this.percentage1).toFixed(0)
     },
+
     chosen: function (){
-      if (this.responses[this.counter] == 1) {
+      console.log(this.responses.length)
+      if (this.responses[this.responses.length-1] == 1) {
           return true
         }
         else {
@@ -90,11 +100,11 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="css" >
 
   .answer-main {
     width: 1310px;
-    padding:100px 20px 20px 20px;
+    padding:100px 60px 20px 60px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
@@ -102,7 +112,7 @@ export default {
 
   .answer-heading {
     display: flex;
-    padding: 0 60px;
+    padding: 0;
   }
 
   .answer-heading-text {
@@ -111,19 +121,28 @@ export default {
 
   .answer-heading h1 {
     font-family: Baloo Bhai;
-    font-size: 36px;
-    color: #e2ff05;
-    line-height: 42px;
-    text-align: center;
+        font-size: 48px;
+        color: #e2ff05;
+        line-height: 55px;
+        text-align: center;
+        padding: 15px;
+        margin: 0;
   }
 
   .answer-middle {
-   display:flex;
+    margin: 40px 0 0 0;
+  }
+
+  #chart_div {
+    float:left;
+    width:37.5%;
+    height:400px;
+    margin-right:40px;
   }
 
   .answer-stats{
-    padding-top: 125px;
-    margin-right: 100px;
+    padding-top: 90px;
+    float:left;
   }
 
   .answer-stats-1 {
@@ -136,12 +155,14 @@ export default {
     font-size:70px;
     color: #99e394;
     text-transform:lowercase;
+    position: relative;
+    top: -20px;
   }
 
   .stats-text-1{
     font-family: Baloo Bhai;
     font-size: 28px;
-    padding: 28px 0 0 10px;
+    padding: 12px 0 0 10px;
     color: #99e394;
     line-height: 24px;
     text-align: left;
@@ -162,27 +183,20 @@ export default {
     font-size:70px;
     color: #e2ff05;
     text-transform:lowercase;
+    position: relative;
+    top: -20px;
   }
 
   .stats-text-2{
     font-family: Baloo Bhai;
     font-size: 28px;
-    padding: 28px 0 0 10px;
+    padding: 12px 0 0 10px;
     color: #e2ff05;
     line-height: 24px;
     text-align: left;
   }
 
   .button-container{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 150px;
-  }
-
-  #chart_div {
-    float:left;
-    width:37.5%;
-    height:400px;
   }
 
   .img-small {
@@ -255,6 +269,7 @@ export default {
   button.btn {
     width: 8rem;
     height: auto;
+    float:right;
   }
 
   button.btn .circle {
@@ -300,7 +315,8 @@ export default {
 
   #next-text{
     position: relative;
-    top: -35px;
+    top: -42px;
+    left: 35px;
   }
 
   button.btn .button-text {
@@ -337,11 +353,23 @@ export default {
   }
 
   .chosen{
-    border: 8px solid rgba(13,212,26,.62);
+    border: 8px solid #86fc6f;
   }
   .not-chosen{
     border: 8px solid #6c74dd;
   }
+
+
+.not-chosen-text {
+display:none;
+}
+
+.chosen-text p {
+  font-family :Permanent Marker;
+  color:white;
+  font-size: 32px;
+margin: 0;
+}
 
 
 </style>
