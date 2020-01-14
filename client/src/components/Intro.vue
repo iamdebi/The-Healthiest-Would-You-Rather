@@ -1,20 +1,31 @@
 <template lang="html">
   <div class="intro-main">
+    <div class="screen-button">
+      <button type="button" name="button" v-on:click="summary">Summary</button>
+      <button v-on:click="openFullscreen();">
+        <img src="/img/full-screen.svg"
+      </button>
+      <button v-on:click="closeFullscreen();">
+        <img src="/img/reduce-screen.png"/>
+      </button>
+    </div>
     <div class="intro-heading">
        <h1>The Healthiest <br>Would you rather Quiz!</h1>
     </div>
     <div class="intro-subhead">
        <p>Helping you make better food choices</p>
     </div>
-    <div class="start-button-container">
-      <button type="button" v-on:click="handleStartButtonClick()">Start</button>
+    <div id="container" class="start-button-container">
+      <button class="btn" type="button" v-on:click="handleStartButtonClick()">
+        <span class="circle">
+          <span class="icon arrow"></span>
+      </span>
+      <span id="start" class="button-text">Start</span></button>
     </div>
+
     <div class="intro-people-counter">
        <p>{{this.number}} people have taken this quiz</p>
     </div>
-    <button type="button" name="button" v-on:click="summary">Summary</button>
-    <button v-on:click="openFullscreen();">Open Fullscreen</button>
-    <button v-on:click="closeFullscreen();">Close Fullscreen</button>
   </div>
 </template>
 
@@ -98,6 +109,23 @@ export default {
 
 p {
   font-family: Open Sans;
+}
+
+.start-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-people-counter {
+  font-family: Open Sans;
+  font-size: 32px;
+  color: #e2ff05;
+  text-align: center;
+}
+
+.screen-button{
+  display: flex;
+  flex-direction: row-reverse
 }
 
 </style>
