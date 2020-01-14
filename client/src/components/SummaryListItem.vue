@@ -10,9 +10,6 @@
       <p>{{this.question.totalResponses1}} people</p>
     </div>
 
-    <!-- <div id="bar-div">
-    </div> -->
-
     <div class="option2-text">
       <p>{{this.percentage2}}%</p>
       <p>{{this.question.totalResponses2}} people</p>
@@ -71,15 +68,24 @@ export default {
     border: 10px solid #6c74dd;
     margin-right: 10px;
   }
+
+  p {
+    color: #fff;
+    font-family: Baloo Bhai;
+    font-size: 24px;
+  }
+
   .summary-list{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-right: 20px;
   }
+
   .chosen{
     border: 8px solid rgba(13,212,26,.62);
   }
+
   .not-chosen{
     border: 8px solid #6c74dd;
   }
@@ -90,4 +96,5 @@ export default {
     justify-content: center;
     text-align: center;
   }
+
 </style>

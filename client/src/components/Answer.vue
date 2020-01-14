@@ -299,7 +299,8 @@ export default {
 
   #next-text{
     position: relative;
-    top: -35px;
+    top: -40px;
+    left: 30%;
   }
 
   button.btn .button-text {

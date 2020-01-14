@@ -29,7 +29,7 @@
         </svg>
         </div>Instagram</div>
     </a>
-  
+
   </div>
 </template>
 
@@ -53,7 +53,7 @@ export default {
 }
 
 .resp-sharing-button {
-  border-radius: 5px;
+  border-radius: 15px;
   transition: 25ms ease-out;
   padding: 0.5em 0.75em;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;

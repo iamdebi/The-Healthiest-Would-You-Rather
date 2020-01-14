@@ -6,8 +6,10 @@
     <div class="summary-list-container">
       <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </div>
+    <div class="sum-btn">
       <share-button />
-    <button type="button" id="screenshot" v-on:click="handleScreenshot()">Screenshot</button>
+      <button class="btn" type="button" id="screenshot" v-on:click="handleScreenshot()">Screenshot</button>
+    </div>
   </div>
 </template>
 
@@ -42,6 +44,17 @@ export default {
 
 <style lang="css" scoped>
 
+h1 {
+  color: #fff;
+  font-family: Baloo Bhai;
+  font-size: 45px;
+  text-align: center;
+}
+
+.sum-btn{
+  display: flex;
+  justify-content: center;
+}
   .summary-main {
     width: 1310px;
     padding:20px;
@@ -61,10 +74,21 @@ export default {
     column-count: 2;
   }
 
-  #screenshot{
-    margin-left: 8px;
-    padding:12px;
-    border-radius: 10px;
-    background-color: green;
+  .btn{
+    border-radius: 15px;
+    background-color: #e1151a;
+    color: #fff;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding: 7px;
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: inline-block;
+  }
+
+  .btn:hover{
+    background-color: #a8151a;
   }
 </style>
