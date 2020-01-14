@@ -25,14 +25,14 @@
             <div class="stats-text-2">chose {{this.questions[currentQuestion].option2}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses2}} people)</span></div>
           </div>
         </div>
-      </div>
-      <div id="container">
-        <button class="btn" type="button" v-on:click="handleNextClick">
-          <span class="circle">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">Next</span>
-        </button>
+        <div class="button-container">
+          <button class="btn" type="button" v-on:click="handleNextClick">
+            <span class="circle">
+              <span class="icon arrow"></span>
+            </span>
+            <span id="next-text" class="button-text">Next</span>
+          </button>
+        </div>
       </div>
     </div>
     <div style="clear:both;" />
@@ -109,7 +109,6 @@ export default {
   }
 
   .answer-stats{
-    width: 40%;
     padding: 125px 0 0 0;
 
   }
@@ -159,6 +158,11 @@ export default {
     color: #e2ff05;
     line-height: 24px;
     text-align: left;
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: flex-end;
   }
 
 
@@ -281,6 +285,11 @@ button.btn .circle .icon.arrow::before {
   border-right: 0.125rem solid #5956d7;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+#next-text{
+  position: relative;
+  top: -35px;
 }
 
 button.btn .button-text {
