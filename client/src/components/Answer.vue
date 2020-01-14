@@ -67,7 +67,7 @@ export default {
     padding:20px;
     height:100vh;
     margin: 0 auto;
-    background-image: linear-gradient(90deg, #1d64f0 0%, #1ad5fd 100%);
+    background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
   }
 
   .answer-heading h1 {
@@ -223,8 +223,8 @@ button.next-btn .circle .icon.arrow::before {
   right: 0.0625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid #1C67F0;
-  border-right: 0.125rem solid #1C67F0;
+  border-top: 0.125rem solid #5956d7;
+  border-right: 0.125rem solid #5956d7;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -237,7 +237,7 @@ button.next-btn .button-text {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #fff;
+  color: #e2ff05;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -247,12 +247,12 @@ button:hover .circle {
   width: 100%;
 }
 button:hover .circle .icon.arrow {
-  background: #1C67F0;
+  background: #5956d7;
   -webkit-transform: translate(0.5rem, 0);
           transform: translate(0.5rem, 0);
 }
 button:hover .button-text {
-  color: #1C67F0;
+  color: #5956d7;
 }
 
 @supports (display: grid) {

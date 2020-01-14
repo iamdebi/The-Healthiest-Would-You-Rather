@@ -58,7 +58,7 @@ export default {
     padding:20px;
     height:100vh;
     margin: 0 auto;
-    background-image: linear-gradient(90deg, #1d64f0 0%, #1ad5fd 100%);
+    background-image: linear-gradient(to right, rgba(29,100,240,.70), rgba(26,213,253,0.70));
   }
 
   .question-heading h1 {

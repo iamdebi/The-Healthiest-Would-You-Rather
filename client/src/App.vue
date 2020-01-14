@@ -17,7 +17,7 @@
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
-    
+
     <div class="pagination">
       <pagination-dots :number="this.currentQuestion" :questions="this.questions"/>
     </div>
@@ -91,10 +91,15 @@ export default {
 </script>
 
 <style lang="css">
+
 #app {
   background-image: url("/img/food-background-blur.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+h1, h3, p {
+  text-shadow: 0px 0px 39px rgba(0,0,0,0.5);
 }
 
 button{
