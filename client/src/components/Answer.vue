@@ -112,12 +112,6 @@ export default {
     text-align: left;
   }
 
-  .pagination{
-    display:flex;
-    justify-content:center;
-    align-items: flex-end;
-  }
-
 #chart_div {
   float:left;
   width:40%;

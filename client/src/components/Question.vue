@@ -143,10 +143,4 @@ text-align: center;
     -webkit-animation-name: fadeInUp;
 }
 
-.pagination{
-  display:flex;
-  justify-content:center;
-  align-items: flex-end;
-}
-
 </style>
