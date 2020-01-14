@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 
 .answer-main {
     width: 1310px;
@@ -111,6 +111,8 @@ export default {
   height:700px;
 }
 
+/* answer fade in transition */
+
 @keyframes fadeInUp {
     from {
         transform: translate3d(0,0,0)
@@ -150,23 +152,10 @@ export default {
     -webkit-animation-name: fadeInUp;
 }
 
+/* next button transition */
+
 * {
   box-sizing: border-box;
-}
-*::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Open Sans;
-  font-size: 1rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  min-height: 100vh;
-  background: #f3f8fa;
 }
 
 button {
@@ -228,6 +217,7 @@ button.next-btn .circle .icon.arrow::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+
 button.next-btn .button-text {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
@@ -236,38 +226,28 @@ button.next-btn .button-text {
   right: 0;
   bottom: 0;
   padding: 0.75rem 0;
-  margin: 0 0 0 1.85rem;
+  margin: 0 0 0 2.5rem;
   color: #e2ff05;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
+  font-family: Baloo Bhai;
 }
+
 button:hover .circle {
   width: 100%;
 }
+
 button:hover .circle .icon.arrow {
   background: #5956d7;
   -webkit-transform: translate(0.5rem, 0);
           transform: translate(0.5rem, 0);
 }
+
 button:hover .button-text {
   color: #5956d7;
-}
-
-@supports (display: grid) {
-  body {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.625rem;
-    grid-template-areas: ". main main ." ". main main .";
-  }
-
-  #container {
-    grid-area: main;
-    align-self: center;
-    justify-self: center;
-  }
+  font-family: Baloo Bhai;
 }
 
 </style>
