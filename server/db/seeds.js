@@ -34,16 +34,6 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "Cooked lentils portion",
-    option2: "A hamburger",
-    responseText: "55g of cooked lentils has nearly 18g of protein, more than the amount in a hamburger",
-    url1: "http://localhost:8080/img/lentils.jpg",
-    url2: "http://localhost:8080/img/hamburger.jpg",
-    totalResponses1: 62,
-    totalResponses2: 88
-  },
-
-  {
     option1: "A slice of wholemeal bread",
     option2: "A blueberry muffin",
     responseText: "1 blueberry muffin has the same fibre content as a slice of wholemeal bread",
