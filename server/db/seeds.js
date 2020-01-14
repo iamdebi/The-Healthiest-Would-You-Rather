@@ -24,7 +24,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "A serving of ready made pasta sauce",
+    option1: "Pasta sauce serving",
     option2: "1.5 teaspoons of salt",
     responseText: "A serving of ready made pasta sauce contains 1.5g of salt",
     url1: "http://localhost:8080/img/pasta-sauce.jpg",
@@ -34,7 +34,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "A portion of cooked lentils",
+    option1: "Cooked lentils portion",
     option2: "A hamburger",
     responseText: "55g of cooked lentils has nearly 18g of protein, more than the amount in a hamburger",
     url1: "http://localhost:8080/img/lentils.jpg",
@@ -64,7 +64,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "McDonalds double quarter pounder with cheese meal with fries and a banana milkshake",
+    option1: "Double quarter pounder meal and milkshake",
     option2: "3 avocados",
     responseText: "The calorie content of both of those options is the same",
     url1: "http://localhost:8080/img/mcdonalds.jpg",
