@@ -1,11 +1,11 @@
 <template lang="html">
 
-  <div  v-on:load="openFullscreen()" id="app">
+  <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
       <intro :number="this.users.length + 149"/>
       <button type="button" name="button" v-on:click="summary">Summary</button>
       <button v-on:click="openFullscreen();">Open Fullscreen</button>
-<button v-on:click="closeFullscreen();">Close Fullscreen</button>
+      <button v-on:click="closeFullscreen();">Close Fullscreen</button>
     </div>
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
@@ -67,8 +67,6 @@ export default {
       this.nextQuestion();
     });
 
-    this.openFullscreen().then()
-
 },
 
   components: {
@@ -78,11 +76,6 @@ export default {
     "intro": Intro,
     "pagination-dots": PaginationDots
   },
-
-// updated: {
-//   this.openFullscreen()
-// },
-
 
   methods: {
     nextQuestion() {
@@ -124,16 +117,8 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-</style>
 <style lang="css">
+
 button{
   padding:12px;
   border-radius: 10px;

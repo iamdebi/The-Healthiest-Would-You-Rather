@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="pagination">
     <ul>
-      <li></li>
-      <li></li>
-      <li id="is-active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>1</li>
+      <li>2</li>
+      <li id="is-active">3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
     </ul>
   </div>
 </template>
