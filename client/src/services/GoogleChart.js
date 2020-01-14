@@ -1,18 +1,18 @@
 
 export default{
-  drawChart(percentage) {
+  drawChart(percentage, colour1, colour2, option1, option2) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Option');
     data.addColumn('number', 'Responses');
 
     data.addRows(2);
-    data.setValue(0, 0, 'Option 1');
+    data.setValue(0, 0, option1);
     data.setValue(0, 1, 0.0);
-    data.setValue(1, 0, 'Option 2');
+    data.setValue(1, 0, option2);
     data.setValue(1, 1, 100.0);
 
     var options = {
-      colors: ['#99e394', '#e2ff05'],
+      colors: [colour1, colour2],
       width: '100%',
       height:'100%',
       legend: 'none',
