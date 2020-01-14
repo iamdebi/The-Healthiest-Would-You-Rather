@@ -18,6 +18,7 @@
 import ShareButton from "./ShareButton.vue"
 import CanvasFunction from "../services/CanvasFunction.js"
 import SummaryListItem from "./SummaryListItem.vue"
+import QuizServices from "../services/QuizServices.js"
 export default {
   name: "summary-list",
 
@@ -39,6 +40,9 @@ export default {
     handleScreenshot() {
       CanvasFunction.takeScreenshot()
     }
+  },
+  mounted() {
+    QuizServices.postUser({responses: this.responses});
   }
 }
 </script>
