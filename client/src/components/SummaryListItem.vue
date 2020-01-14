@@ -1,28 +1,39 @@
 <template lang="html">
   <div class="summary-list">
+
     <div class="option1-image">
       <img :src="this.question.url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
     </div>
+
     <div class="option1-text">
       <p>{{this.percentage1}}%
       <p>{{this.question.totalResponses1}} people</p>
     </div>
 
+    <!-- <div id="bar-div">
+    </div> -->
+
     <div class="option2-text">
       <p>{{this.percentage2}}%</p>
       <p>{{this.question.totalResponses2}} people</p>
     </div>
+
     <div class="option2-image">
       <img :src="this.question.url2" v-bind:class="[chosen ? 'not-chosen' : 'chosen']"/>
     </div>
+
   </div>
 </template>
 
 <script>
 
+import GoogleChart from "../services/GoogleChart.js";
+
 export default {
   name:"summary-list-item",
+
   props: ["question", "responses", "counter"],
+
   computed: {
     percentage1: function (){
      let percentage = this.question.totalResponses1 / (this.question.totalResponses2 + this.question.totalResponses1)*100
@@ -39,7 +50,12 @@ export default {
         return false
       }
     }
+  },
+
+  mounted() {
+    GoogleChart.drawBarChart(this.question.totalResponses1)
   }
+
 }
 </script>
 
