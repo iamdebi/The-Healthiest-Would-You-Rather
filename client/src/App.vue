@@ -10,16 +10,16 @@
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
       <div class="answer" v-if="this.show == false">
-        <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
-      </div>
-      <div class="pagination">
-        <pagination-dots :number="this.currentQuestion"/>
+        <answer :questions="this.questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
 
-
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
+    </div>
+    
+    <div class="pagination">
+      <pagination-dots :number="this.currentQuestion" :questions="this.questions"/>
     </div>
   </div>
 
@@ -86,9 +86,7 @@ export default {
     nextDisplay() {
       this.show = !this.show
     }
-
   }
-
 };
 </script>
 
