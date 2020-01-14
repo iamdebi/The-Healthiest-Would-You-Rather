@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="summary-list">
+  <div class="summary-list-item">
 
     <div class="option1-image">
       <img :src="this.question.url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
@@ -24,8 +24,6 @@
 
 <script>
 
-import GoogleChart from "../services/GoogleChart.js";
-
 export default {
   name:"summary-list-item",
 
@@ -49,13 +47,6 @@ export default {
     }
   },
 
-  mounted() {
-    GoogleChart.drawBarChart(this.question.totalResponses1)
-  },
-  components: {
-    GoogleChart
-  }
-
 }
 </script>
 
@@ -75,7 +66,7 @@ export default {
     font-size: 24px;
   }
 
-  .summary-list{
+  .summary-list-item{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -2,13 +2,14 @@
 
   <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
-      <intro :number="this.users.length + 149" :currentQuestion="this.currentQuestion" />
+      <intro :number="this.users.length + 149" />
     </div>
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
       <div class="question" v-if="this.show == true">
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
+
       <div class="answer" v-if="this.show == false">
         <answer :questions="this.questions" :currentQuestion="this.currentQuestion" :responses="responses"/>
       </div>
@@ -30,7 +31,6 @@ import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
 import Answer from "./components/Answer.vue";
 import Intro from "./components/Intro.vue";
-
 
 export default {
   name: "app",

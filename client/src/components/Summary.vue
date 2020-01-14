@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="summary-main">
+  <div id="summary-main">
     <div class="summary-heading">
       <h1>Your choices!</h1>
     </div>

@@ -71,7 +71,7 @@ export default {
       }
     }
   },
-  props: ["number", "currentQuestion"]
+  props: ["number"]
 }
 </script>
 

@@ -2,7 +2,7 @@ import html2canvas from 'html2canvas';
 
 export default {
   takeScreenshot() {
-    html2canvas(document.querySelector(".summary-list-container"))
+    html2canvas(document.querySelector("#summary-main"))
     .then(canvas => {
       saveAs(canvas.toDataURL(), 'infographic.png');
     })

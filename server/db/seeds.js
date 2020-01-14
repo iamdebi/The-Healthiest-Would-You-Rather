@@ -9,8 +9,8 @@ db.questions.insertMany([{
     responseText: "250ml of ice cream and 44g of butter have the same amount of fat",
     url1: "http://localhost:8080/img/ice-cream.jpg",
     url2: "http://localhost:8080/img/butter.jpg",
-    totalResponses1: 142,
-    totalResponses2: 8
+    totalResponses1: 148,
+    totalResponses2: 2
   },
 
   {
@@ -24,13 +24,13 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "Pasta sauce serving",
+    option1: "A pasta sauce serving",
     option2: "1.5 teaspoons of salt",
     responseText: "A serving of ready made pasta sauce contains 1.5g of salt",
     url1: "http://localhost:8080/img/pasta-sauce.jpg",
     url2: "http://localhost:8080/img/salt.jpg",
-    totalResponses1: 132,
-    totalResponses2: 18
+    totalResponses1: 144,
+    totalResponses2: 6
   },
 
   {
@@ -39,24 +39,24 @@ db.questions.insertMany([{
     responseText: "1 blueberry muffin has the same fibre content as a slice of wholemeal bread",
     url1: "http://localhost:8080/img/bread.jpeg",
     url2: "http://localhost:8080/img/muffin.jpg",
-    totalResponses1: 42,
-    totalResponses2: 108
+    totalResponses1: 52,
+    totalResponses2: 98
   },
 
   {
-    option1: "8oz ribeye steak",
-    option2: "A boiled egg",
+    option1: "A boiled egg",
+    option2: "8oz ribeye steak",
     responseText: "Both options have around the same amount of cholesterol, however the cholesterol found within a boiled egg is better for your heart",
-    url1: "http://localhost:8080/img/steak.webp",
-    url2: "http://localhost:8080/img/egg.jpg",
-    totalResponses1: 94,
-    totalResponses2: 66
+    url1: "http://localhost:8080/img/egg.jpg",
+    url2: "http://localhost:8080/img/steak.webp",
+    totalResponses1: 84,
+    totalResponses2: 76
   },
 
   {
-    option1: "Double quarter pounder meal and milkshake",
+    option1: "A double quarter pounder meal and milkshake",
     option2: "3 avocados",
-    responseText: "The calorie content of both of those options is the same",
+    responseText: "The calorie content of both of those options are the same",
     url1: "http://localhost:8080/img/mcdonalds.jpg",
     url2: "http://localhost:8080/img/avocados.jpg",
     totalResponses1: 81,
@@ -66,7 +66,5 @@ db.questions.insertMany([{
 ]);
 
 db.users.insertMany([{
-  responses: [1, 2, 1, 1, 2, 2, 1],
-  latitude: "55.865426",
-  longitude: "-4.257861"
+  responses: [1, 2, 1, 1, 2, 2, 1]
 }])
