@@ -73,13 +73,13 @@ export default {
     },
     chosen: function (){
       if (this.responses[this.counter] == 1) {
-          return true
-        }
-        else {
-          return false
-        }
+        return true
       }
-    },
+      else {
+        return false
+      }
+    }
+  },
   components: {
     GoogleChart,
     "pagination-dots": PaginationDots
@@ -145,6 +145,7 @@ export default {
     color: #99e394;
     line-height: 24px;
     text-align: left;
+    text-transform: lowercase;
   }
 
   .stats-people {
@@ -171,6 +172,7 @@ export default {
     color: #e2ff05;
     line-height: 24px;
     text-align: left;
+    text-transform: lowercase;
   }
 
   .button-container{

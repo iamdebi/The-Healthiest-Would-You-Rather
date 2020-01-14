@@ -54,6 +54,9 @@ export default {
 
   mounted() {
     GoogleChart.drawBarChart(this.question.totalResponses1)
+  },
+  components: {
+    GoogleChart
   }
 
 }
