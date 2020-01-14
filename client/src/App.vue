@@ -17,7 +17,7 @@
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
-    
+
     <div class="pagination">
       <pagination-dots :number="this.currentQuestion" :questions="this.questions"/>
     </div>
