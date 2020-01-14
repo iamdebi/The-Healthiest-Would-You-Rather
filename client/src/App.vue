@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="summary" v-if="this.currentQuestion == 7">
+    <div class="summary" v-if="this.currentQuestion == 6">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
 
@@ -62,7 +62,7 @@ export default {
     });
 
     eventBus.$on("summary", summary => {
-      this.currentQuestion = 7
+      this.currentQuestion = 6
     });
 
 },
