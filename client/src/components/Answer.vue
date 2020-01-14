@@ -17,18 +17,18 @@
         </div>
         <div class="answer-stats">
           <div v-bind:class="[chosen ? 'chosen-text' : 'not-chosen-text']">
-            <p>You Chose This!</p>
+            <p id="chose-text">You Chose This!</p>
           </div>
-          <div class="answer-stats-1">
+          <div class="answer-stats-1" v-bind:id="[chosen ? 'chosen-stats' : 'not-chosen-stats']">
             <div class="big-percentage-1">{{percentage1}}%
             </div>
             <div class="stats-text-1">chose {{this.questions[currentQuestion].option1}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses1}} people)</span>
             </div>
           </div>
           <div v-bind:class="[chosen ? 'not-chosen-text' : 'chosen-text']">
-            <p>You Chose This!</p>
+            <p id="chose-text">You Chose This!</p>
           </div>
-          <div class="answer-stats-2">
+          <div class="answer-stats-2" v-bind:id="[chosen ? 'not-chosen-stats' : 'chosen-stats']">
             <div class="big-percentage-2">{{percentage2}}%
             </div>
             <div class="stats-text-2">chose {{this.questions[currentQuestion].option2}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses2}} people)</span>
@@ -72,11 +72,11 @@ export default {
   computed: {
     percentage1: function (){
      let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
-     return percentage.toFixed(0)
+     return percentage.toFixed(1)
     },
 
     percentage2: function (){
-    return (100 - this.percentage1).toFixed(0)
+    return (100 - this.percentage1).toFixed(1)
     },
 
     chosen: function (){
@@ -86,6 +86,14 @@ export default {
         else {
           return false
         }
+    },
+    colour: function (){
+      if (this.responses[this.currentQuestion] == 1) {
+        return true
+      }
+      else {
+        return false
+      }
     }
   },
   components: {
@@ -93,7 +101,13 @@ export default {
     "pagination-dots": PaginationDots
   },
   mounted() {
-    GoogleChart.drawChart(this.percentage1)
+    if (this.colour) {
+      GoogleChart.drawChart(this.questions[this.currentQuestion], "#6c74dd", "#86fc6f")
+    }
+    else {
+      GoogleChart.drawChart(this.questions[this.currentQuestion], "#86fc6f", "#6c74dd")
+    }
+
   }
 };
 </script>
@@ -131,13 +145,6 @@ export default {
     margin: 40px 0 0 0;
   }
 
-  #chart_div {
-    float:left;
-    width:37.5%;
-    height:400px;
-    margin-right:40px;
-  }
-
   .answer-stats{
     padding-top: 90px;
     float:left;
@@ -153,7 +160,6 @@ export default {
     font-family: Baloo Bhai;
     text-align: right;
     font-size:70px;
-    color: #99e394;
     text-transform:lowercase;
     position: relative;
     top: -20px;
@@ -161,13 +167,28 @@ export default {
     margin-right:20px;
   }
 
+  #chart_div {
+    float:left;
+    width:37.5%;
+    height:400px;
+    margin-right:40px;
+  }
+
+  #chosen-stats{
+    color: #86fc6f;
+  }
+
+  #not-chosen-stats{
+    color: #6c74dd
+  }
+
   .stats-text-1{
     font-family: Baloo Bhai;
     font-size: 28px;
     padding: 12px 0 0 10px;
-    color: #99e394;
     line-height: 24px;
     text-align: left;
+    text-transform: lowercase;
   }
 
   .stats-people {
@@ -184,7 +205,6 @@ export default {
     font-family: Baloo Bhai;
     text-align: right;
     font-size:70px;
-    color: #e2ff05;
     text-transform:lowercase;
     position: relative;
     top: -20px;
@@ -196,9 +216,9 @@ export default {
     font-family: Baloo Bhai;
     font-size: 28px;
     padding: 12px 0 0 10px;
-    color: #e2ff05;
     line-height: 24px;
     text-align: left;
+    text-transform: lowercase;
   }
 
   .button-container{
@@ -360,17 +380,17 @@ export default {
     border: 8px solid #6c74dd;
   }
 
+  .chosen-text p {
+    font-family :Permanent Marker;
+    color:#86fc6f;
+    font-size: 32px;
+    margin: 0;
+  }
 
-.not-chosen-text {
-display:none;
-}
+  .not-chosen-text p{
+    display:none;
+  }
 
-.chosen-text p {
-  font-family :Permanent Marker;
-  color:white;
-  font-size: 32px;
-margin: 0;
-}
 
 
 </style>

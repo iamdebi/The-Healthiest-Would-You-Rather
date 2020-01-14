@@ -20,10 +20,10 @@
       <button class="btn" type="button" v-on:click="handleStartButtonClick()">
         <span class="circle">
           <span class="icon arrow"></span>
-      </span>
-      <span id="start" class="button-text">Start</span></button>
+        </span>
+        <span id="start" class="button-text">Start</span>
+      </button>
     </div>
-
     <div class="intro-people-counter">
        <p>Join the {{this.number}} people that have taken this quiz</p>
     </div>
@@ -34,6 +34,7 @@
 import {eventBus} from "../main.js"
 export default {
   name:"intro",
+  props: ["number"],
   data() {
     return {
       fullscreen: false
@@ -70,68 +71,66 @@ export default {
         document.msExitFullscreen();
       }
     }
-  },
-  props: ["number"]
+  }
 }
 </script>
 
 <style lang="css">
 
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+  @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+  .intro-main {
+    width: 1310px;
+    padding:60px 30px 30px 30px;
+    height:100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
+  }
 
-.intro-main {
-  width: 1310px;
-  padding:60px 30px 30px 30px;
-  height:100vh;
-  margin: 0 auto;
-  background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
-}
+  .intro-heading {
+    margin-top: 120px;
+  }
 
-.intro-heading {
-  margin-top: 120px;
-}
-
-.intro-heading h1 {
+  .intro-heading h1 {
     font-family: Baloo Bhai;
     font-size: 72px;
     color: #ffffff;
     line-height: 89px;
     text-align: center;
-}
+  }
 
-.intro-subhead {
+  .intro-subhead {
     margin-top:0;
-}
+  }
 
-.intro-subhead p {
+  .intro-subhead p {
     font-family: Baloo Bhai;
     font-size: 48px;
     color: #e2ff05;
     text-align: center;
-}
+  }
 
-p {
-  font-family: Open Sans;
-}
+  p {
+    font-family: Open Sans;
+  }
 
-.start-button-container {
-  display: flex;
-  justify-content: center;
-}
+  .start-button-container {
+    display: flex;
+    justify-content: center;
+  }
 
-.intro-people-counter {
-  font-family: Open Sans;
-  font-size: 32px;
-  color: #e2ff05;
-  text-align: center;
-}
+  .intro-people-counter {
+    font-family: Open Sans;
+    font-size: 32px;
+    color: #e2ff05;
+    text-align: center;
+  }
 
-.screen-button{
-  display: flex;
-  flex-direction: row-reverse
-}
+  .screen-button{
+    display: flex;
+    flex-direction: row-reverse
+  }
 
 </style>

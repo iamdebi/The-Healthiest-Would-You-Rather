@@ -22,36 +22,36 @@ export default {
 
 <style lang="css" scoped>
 
-.pagination {
-  margin:40px;
-}
+  .pagination {
+    margin:40px;
+  }
 
-.pagination ul{
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-  bottom: 0px;
-  left: 43%;
-  text-align: center;
-}
+  .pagination ul{
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    bottom: 0px;
+    left: 43%;
+    text-align: center;
+  }
 
-li{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 13px;
-  border-radius: 100%;
-  background-color: #6C74DD;
-}
+  li{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 13px;
+    border-radius: 100%;
+    background-color: #6C74DD;
+  }
 
-#active{
-  content: "";
-  position:relative;
-  top:4px;
-  width: 30px;
-  height: 30px;
-  margin-top: 7px;
-  border-radius: 100%;
-  background-color: #86fc6f;
-}
+  #active{
+    content: "";
+    position:relative;
+    top:4px;
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+    border-radius: 100%;
+    background-color: #86fc6f;
+  }
 </style>

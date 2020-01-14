@@ -65,7 +65,7 @@ export default {
       this.currentQuestion = 6
     });
 
-},
+  },
 
   components: {
     "question": Question,
