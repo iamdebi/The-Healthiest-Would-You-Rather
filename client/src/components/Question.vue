@@ -26,7 +26,7 @@
       </div>
     </div>
     <div style="clear:both;" />
-      <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
+    <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
   </div>
 </template>
 
@@ -38,7 +38,6 @@ import PaginationDots from "./PaginationDots.vue";
 export default {
   name: "question",
   props: ["currentQuestion", "questions"],
-
   methods: {
     handleClick1() {
       this.questions[this.currentQuestion].totalResponses1 += 1;

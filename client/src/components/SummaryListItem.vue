@@ -26,9 +26,7 @@
 
 export default {
   name:"summary-list-item",
-
   props: ["question", "responses", "counter"],
-
   computed: {
     percentage1: function (){
      let percentage = this.question.totalResponses1 / (this.question.totalResponses2 + this.question.totalResponses1)*100
@@ -45,8 +43,7 @@ export default {
         return false
       }
     }
-  },
-
+  }
 }
 </script>
 

@@ -44,17 +44,18 @@ export default {
 
 <style lang="css" scoped>
 
-h1 {
-  color: #fff;
-  font-family: Baloo Bhai;
-  font-size: 45px;
-  text-align: center;
-}
+  h1 {
+    color: #fff;
+    font-family: Baloo Bhai;
+    font-size: 45px;
+    text-align: center;
+  }
 
-.sum-btn{
-  display: flex;
-  justify-content: center;
-}
+  .sum-btn{
+    display: flex;
+    justify-content: center;
+  }
+  
   .summary-main {
     width: 1310px;
     padding:20px;
