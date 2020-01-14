@@ -19,7 +19,7 @@ export default{
       pieHole: 0.2,
       backgroundColor:'transparent',
       is3D: 'true',
-      pieSliceTextStyle: {color: "#222222", fontName: "Open Sans", fontSize: 14},
+      pieSliceTextStyle: {color: "#222222", fontName: "Open Sans", fontSize: 24},
       chartArea:{left:20,top:0,width:'100%',height:'100%'}
     };
 

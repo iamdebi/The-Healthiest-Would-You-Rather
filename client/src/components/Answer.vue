@@ -141,10 +141,12 @@ export default {
   .answer-stats{
     padding-top: 90px;
     float:left;
+    width:50%;
   }
 
   .answer-stats-1 {
-    display:flex;
+    width:100%;
+    margin-bottom: 60px;
   }
 
   .big-percentage-1 {
@@ -155,6 +157,8 @@ export default {
     text-transform:lowercase;
     position: relative;
     top: -20px;
+    float:left;
+    margin-right:20px;
   }
 
   .stats-text-1{
@@ -172,7 +176,8 @@ export default {
   }
 
   .answer-stats-2 {
-    display:flex;
+    width:100%;
+    margin-bottom: 30px;
   }
 
   .big-percentage-2 {
@@ -183,6 +188,8 @@ export default {
     text-transform:lowercase;
     position: relative;
     top: -20px;
+    float:left;
+    margin-right:20px;
   }
 
   .stats-text-2{
@@ -245,10 +252,6 @@ export default {
   }
 
 /* next button transition */
-
-  * {
-    box-sizing: border-box;
-  }
 
   button {
     position: relative;
