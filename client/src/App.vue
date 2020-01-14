@@ -64,6 +64,10 @@ export default {
       this.nextQuestion();
     });
 
+    eventBus.$on("summary", summary => {
+      this.currentQuestion = 7
+    });
+
 },
 
   components: {
