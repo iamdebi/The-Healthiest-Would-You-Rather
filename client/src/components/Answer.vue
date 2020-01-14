@@ -3,13 +3,14 @@
     <div class="animated animatedFadeInUp fadeInUp">
       <div class="answer-heading">
         <div class="img-left">
-          <img class="img-small" :src="this.questions[currentQuestion].url1"/>
+          <img class="img-small" :src="this.questions[currentQuestion].url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
+          <!--<img class="img-small" :src="this.questions[currentQuestion].url1"/>-->
         </div>
         <div class="answer-heading-text">
           <h1>{{this.questions[currentQuestion].responseText}}</h1>
         </div>
       <div class="img-right">
-        <img class="img-small" :src="this.questions[currentQuestion].url2"/>
+        <img class="img-small" :src="this.questions[currentQuestion].url2" v-bind:class="[chosen ? 'not-chosen' : 'chosen']"/>
       </div>
     </div>
       <div class="answer-middle">
@@ -55,7 +56,7 @@ import PaginationDots from "./PaginationDots.vue";
 
 export default {
   name: "answer",
-  props: ["currentQuestion", "questions"],
+  props: ["currentQuestion", "questions", "responses"],
 
   methods: {
     handleNextClick() {
@@ -69,8 +70,16 @@ export default {
     },
     percentage2: function (){
     return (100 - this.percentage1).toFixed(0)
-    }
-  },
+    },
+    chosen: function (){
+      if (this.responses[this.counter] == 1) {
+          return true
+        }
+        else {
+          return false
+        }
+      }
+    },
   components: {
     GoogleChart,
     "pagination-dots": PaginationDots
@@ -85,7 +94,7 @@ export default {
 
   .answer-main {
     width: 1310px;
-    padding:20px;
+    padding:60px 20px 20px 20px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
@@ -93,11 +102,11 @@ export default {
 
   .answer-heading {
     display: flex;
-    padding: 0 30px;
+    padding: 0 60px;
   }
 
   .answer-heading-text {
-    padding-top:15px;
+        padding: 15px 40px 0 40px;
   }
 
   .answer-heading h1 {
@@ -324,6 +333,13 @@ export default {
   button:hover .button-text {
     color: #5956d7;
     font-family: Baloo Bhai;
+  }
+
+  .chosen{
+    border: 8px solid rgba(13,212,26,.62);
+  }
+  .not-chosen{
+    border: 8px solid #6c74dd;
   }
 
 
