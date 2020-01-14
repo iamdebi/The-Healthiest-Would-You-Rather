@@ -10,7 +10,7 @@
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
       <div class="answer" v-if="this.show == false">
-        <answer :questions="this.questions" :currentQuestion="this.currentQuestion"/>
+        <answer :questions="this.questions" :currentQuestion="this.currentQuestion" :responses="responses"/>
       </div>
     </div>
 
