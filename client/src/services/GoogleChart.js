@@ -11,16 +11,15 @@ export default{
     data.setValue(1, 0, 'Option 2');
     data.setValue(1, 1, 100.0);
     var options = {
-        width:'100%',
-        height:'100%',
-        colors: ['#99e394', '#e2ff05'],
-        legend: 'none',
-        pieHole: 0.2,
-        backgroundColor:'transparent',
-        is3D: 'true',
-        pieSliceTextStyle: {color: "#222222", fontName: "Open Sans", fontSize: 14}
-
-
+      colors: ['#99e394', '#e2ff05'],
+      width: '100%',
+      height:'100%',
+      legend: 'none',
+      pieHole: 0.2,
+      backgroundColor:'transparent',
+      is3D: 'true',
+      pieSliceTextStyle: {color: "#222222", fontName: "Open Sans", fontSize: 14},
+      chartArea:{left:20,top:0,width:'100%',height:'100%'}
     };
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data, options);

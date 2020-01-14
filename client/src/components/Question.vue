@@ -162,7 +162,6 @@ export default {
 
   img:hover {
     animation: img-animation 1000ms linear both;
-    border:0;
     cursor: pointer;
   }
 
