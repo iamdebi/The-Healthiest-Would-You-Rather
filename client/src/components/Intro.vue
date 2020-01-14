@@ -27,9 +27,9 @@ export default {
       eventBus.$emit("next-question");
     },
 
-      summary() {
-        this.currentQuestion = 7
-      },
+    summary() {
+      eventBus.$emit("summary");
+    },
 
       openFullscreen() {
     if (document.documentElement.requestFullscreen) {
