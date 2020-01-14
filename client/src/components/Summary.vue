@@ -6,10 +6,7 @@
     <div class="summary-list-container">
       <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </div>
-    <button type="button" name="share" v-on:click= "displayShare = !displayShare " v-if="!displayShare">Share</button>
-    <transition name="fade">
-      <share-button v-if="displayShare" />
-    </transition>
+      <share-button />
     <button type="button" v-on:click="handleScreenshot()">Screenshot</button>
   </div>
 </template>
