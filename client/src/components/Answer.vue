@@ -17,10 +17,12 @@
         </div>
         <div class="answer-stats">
           <div class="answer-stats-1">
-            <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
+            <div class="big-percentage-1">{{percentage1}}%</div>
+            <div class="stats-text-1">chose {{this.questions[currentQuestion].option1}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses1}} people)</span></div>
           </div>
           <div class="answer-stats-2">
-            <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
+            <div class="big-percentage-2">{{percentage2}}%</div>
+            <div class="stats-text-2">chose {{this.questions[currentQuestion].option2}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses2}} people)</span></div>
           </div>
         </div>
       </div>
@@ -85,7 +87,7 @@ export default {
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
   }
 
-  answer-heading {
+.answer-heading {
     display: flex;
     padding: 0 30px;
 }
@@ -103,37 +105,69 @@ export default {
   }
 
   .answer-middle {
-    width:100%;
-    height:300px
+   display:flex;
   }
 
   .answer-stats{
-    float:left;
-    width:40%;
-    padding:30px;
+    width: 40%;
+    padding: 125px 0 0 0;
+
   }
 
-  .answer-stats-1 p {
+  .answer-stats-1 {
+    display:flex;
+  }
+
+.big-percentage-1 {
     font-family: Baloo Bhai;
-    font-size: 36px;
+    text-align: right;
+    font-size:64px;
     color: #99e394;
-    line-height: 42px;
+    text-transform:lowercase;
+  }
+
+  .stats-text-1{
+    font-family: Baloo Bhai;
+    font-size: 28px;
+    padding: 28px 0 0 10px;
+    color: #99e394;
+    line-height: 24px;
     text-align: left;
   }
 
-  .answer-stats-2 p {
+.stats-people {
+  font-family:Open Sans;
+  font-size:20px;
+}
+
+.answer-stats-2 {
+  display:flex;
+}
+
+.big-percentage-2 {
     font-family: Baloo Bhai;
-    font-size: 36px;
+    text-align: right;
+    font-size:64px;
     color: #e2ff05;
-    line-height: 42px;
+    text-transform:lowercase;
+  }
+
+  .stats-text-2{
+    font-family: Baloo Bhai;
+    font-size: 28px;
+    padding: 28px 0 0 10px;
+    color: #e2ff05;
+    line-height: 24px;
     text-align: left;
   }
+
+
 
 #chart_div {
   float:left;
   width:40%;
   height:700px;
-  padding-left: 120px;
+  padding-left: 180px;
 }
 
 .img-small {
