@@ -21,21 +21,22 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.pagination{
-  padding: 30px 0;
-}
 
 .pagination ul{
   margin: 0;
   padding: 0;
   list-style-type: none;
+  position: absolute;
+  bottom: 0px;
+  left: 43%;
+  text-align: center;
 }
 
 li{
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 5px;
+  margin-right: 13px;
   border-radius: 100%;
   background-color: #6C74DD;
 }

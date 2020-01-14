@@ -1,29 +1,33 @@
 <template lang="html">
   <div class="question-main">
     <div class="animated animatedFadeInUp fadeInUp">
-    <div class="animated animatedFadeInUp fadeInUp">
-      <div class="question-heading">
-        <h1>Make a healthy choice</h1>
+      <div class="animated animatedFadeInUp fadeInUp">
+        <div class="question-heading">
+          <h1>Make a healthy choice</h1>
+        </div>
+      </div>
+      <div class="question-container animated animatedFadeInUp fadeInUp">
+        <div class="option1">
+          <div class="option1-image">
+            <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+          </div>
+          <div class="option1-text">
+            <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+          </div>
+        </div>
+        <div class="option2">
+          <div class="option2-image">
+            <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+          </div>
+          <div class="option2-text">
+            <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="question-container animated animatedFadeInUp fadeInUp">
-      <div class="option1">
-        <div class="option1-image">
-         <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
-       </div>
-       <div class="option1-text">
-         <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
-       </div>
-      </div>
-      <div class="option2">
-        <div class="option2-image">
-        <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
-      </div>
-      <div class="option2-text">
-        <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
-      </div>
-      </div>
-      </div>
+    <div style="clear:both;" />
+    <div class="pagination">
+      <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
     </div>
   </div>
 </template>
@@ -31,6 +35,7 @@
 <script>
 import QuizServices from "../services/QuizServices.js";
 import { eventBus } from "../main.js";
+import PaginationDots from "./PaginationDots.vue";
 
 export default {
   name: "question",
@@ -47,6 +52,9 @@ export default {
       QuizServices.updateQuestionResponses(this.questions[this.currentQuestion]);
       eventBus.$emit("selected-option", 2)
     },
+  },
+  components: {
+    "pagination-dots": PaginationDots
   }
 };
 </script>
@@ -82,10 +90,12 @@ img:hover {
 
 .option1 {
   float:left;
+    padding-left: 195px;
 }
 
 .option2 {
   float:right;
+    padding-right: 195px;
 }
 
 .option-text {
