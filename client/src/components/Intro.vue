@@ -2,10 +2,11 @@
   <div class="intro-main">
     <div class="screen-button">
       <button type="button" name="button" v-on:click="summary">Summary</button>
-      <button v-on:click="openFullscreen();">
+      <!-- TBD -->
+      <button v-on:click="openFullscreen()" v-if="this.fullscreen == false">
         <img src="/img/full-screen.png"/>
       </button>
-      <button v-on:click="closeFullscreen();">
+      <button v-on:click="closeFullscreen()" v-if="this.fullscreen">
         <img src="/img/reduce-screen.png"/>
       </button>
     </div>
@@ -24,7 +25,7 @@
     </div>
 
     <div class="intro-people-counter">
-       <p>{{this.number}} people have taken this quiz</p>
+       <p>Join the {{this.number}} people that have taken this quiz</p>
     </div>
   </div>
 </template>
@@ -33,15 +34,20 @@
 import {eventBus} from "../main.js"
 export default {
   name:"intro",
+  data() {
+    return {
+      fullscreen: false
+    }
+  },
   methods: {
     handleStartButtonClick() {
       eventBus.$emit("next-question");
     },
-
     summary() {
       eventBus.$emit("summary");
-    },
+    }, //TBD
     openFullscreen() {
+      this.fullscreen = !this.fullscreen
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
       } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
@@ -53,6 +59,7 @@ export default {
       }
     },
     closeFullscreen() {
+      this.fullscreen = !this.fullscreen
       if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.mozCancelFullScreen) {
