@@ -70,7 +70,7 @@ export default {
   padding:20px;
   height:100vh;
   margin: 0 auto;
-  background-image: linear-gradient(90deg, #0dd41a 0%, #86fc6f 100% );
+  background-image: linear-gradient(to right, rgba(13,212,26,.45), rgba(134,252,111,0.45));
 }
 
 .intro-heading {
@@ -78,7 +78,6 @@ export default {
 }
 
 .intro-heading h1 {
-
     font-family: Baloo Bhai;
     font-size: 72px;
     color: #ffffff;

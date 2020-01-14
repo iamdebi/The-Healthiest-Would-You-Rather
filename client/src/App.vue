@@ -94,7 +94,7 @@ export default {
 
 <style lang="css">
 #app {
-  background-image: url("/img/gingham.jpg");
+  background-image: url("/img/food-background-blur.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
