@@ -2,9 +2,9 @@ import html2canvas from 'html2canvas';
 
 export default {
   takeScreenshot() {
-    html2canvas(document.querySelector(".summary-main"))
+    html2canvas(document.querySelector(".summary-list-container"))
     .then(canvas => {
-      saveAs(canvas.toDataURL(), 'infographic.jpg');
+      saveAs(canvas.toDataURL(), 'infographic.png');
     })
     function saveAs(uri, filename) {
     var link = document.createElement('a');

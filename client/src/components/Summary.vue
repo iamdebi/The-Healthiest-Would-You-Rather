@@ -10,36 +10,24 @@
     <transition name="fade">
       <share-button v-if="displayShare" />
     </transition>
-    <button type="button" v-on:click="handleScreenshot()">Screenshot</button>
   </div>
 </template>
 
 <script>
 import ShareButton from "./ShareButton.vue"
-import CanvasFunction from "../services/CanvasFunction.js"
 import SummaryListItem from "./SummaryListItem.vue"
 import QuizServices from "../services/QuizServices.js"
 export default {
   name: "summary-list",
-
   data() {
     return {
       displayShare: false
     }
   },
-
   props : ["questions", "responses"],
-
   components: {
     "share-button": ShareButton,
-    "canvas-function": CanvasFunction,
     "summary-list-item": SummaryListItem
-  },
-
-  methods: {
-    handleScreenshot() {
-      CanvasFunction.takeScreenshot()
-    }
   },
   mounted() {
     QuizServices.postUser({responses: this.responses});

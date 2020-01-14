@@ -16,6 +16,7 @@
 
     <div class="summary" v-if="this.currentQuestion == 6">
       <summary-list :questions="this.questions" :responses="this.responses"/>
+      <button type="button" v-on:click="handleScreenshot()">Screenshot</button>
     </div>
 
   </div>
@@ -26,6 +27,7 @@
 
 import {eventBus} from "./main.js";
 import QuizServices from "./services/QuizServices.js";
+import CanvasFunction from "./services/CanvasFunction.js";
 import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
 import Answer from "./components/Answer.vue";
@@ -71,7 +73,8 @@ export default {
     "question": Question,
     "summary-list": Summary,
     "answer": Answer,
-    "intro": Intro
+    "intro": Intro,
+    "canvas-function":CanvasFunction
   },
 
   methods: {
@@ -81,6 +84,9 @@ export default {
     },
     nextDisplay() {
       this.show = !this.show
+    },
+    handleScreenshot() {
+      CanvasFunction.takeScreenshot()
     }
   }
 };
