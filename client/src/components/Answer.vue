@@ -6,23 +6,27 @@
           <img class="img-small" :src="this.questions[currentQuestion].url1"/>
         </div>
         <div class="answer-heading-text">
-        <h1>{{this.questions[currentQuestion].responseText}}</h1>
-      </div>
+          <h1>{{this.questions[currentQuestion].responseText}}</h1>
+        </div>
       <div class="img-right">
         <img class="img-small" :src="this.questions[currentQuestion].url2"/>
       </div>
-      </div>
+    </div>
       <div class="answer-middle">
         <div id='chart_div'>
         </div>
         <div class="answer-stats">
           <div class="answer-stats-1">
-            <div class="big-percentage-1">{{percentage1}}%</div>
-            <div class="stats-text-1">chose {{this.questions[currentQuestion].option1}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses1}} people)</span></div>
+            <div class="big-percentage-1">{{percentage1}}%
+            </div>
+            <div class="stats-text-1">chose {{this.questions[currentQuestion].option1}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses1}} people)</span>
+            </div>
           </div>
           <div class="answer-stats-2">
-            <div class="big-percentage-2">{{percentage2}}%</div>
-            <div class="stats-text-2">chose {{this.questions[currentQuestion].option2}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses2}} people)</span></div>
+            <div class="big-percentage-2">{{percentage2}}%
+            </div>
+            <div class="stats-text-2">chose {{this.questions[currentQuestion].option2}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses2}} people)</span>
+            </div>
           </div>
         </div>
         <div class="button-container">
@@ -61,10 +65,10 @@ export default {
   computed: {
     percentage1: function (){
      let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
-     return percentage.toFixed(1)
+     return percentage.toFixed(0)
     },
     percentage2: function (){
-    return (100 - this.percentage1).toFixed(1)
+    return (100 - this.percentage1).toFixed(0)
     }
   },
   components: {
@@ -79,7 +83,7 @@ export default {
 
 <style lang="css">
 
-.answer-main {
+  .answer-main {
     width: 1310px;
     padding:20px;
     height:100vh;
@@ -87,21 +91,21 @@ export default {
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
   }
 
-.answer-heading {
+  .answer-heading {
     display: flex;
     padding: 0 30px;
-}
+  }
 
-.answer-heading-text {
-  padding-top:15px;
-}
+  .answer-heading-text {
+    padding-top:15px;
+  }
 
   .answer-heading h1 {
-      font-family: Baloo Bhai;
-      font-size: 36px;
-      color: #e2ff05;
-      line-height: 42px;
-      text-align: center;
+    font-family: Baloo Bhai;
+    font-size: 36px;
+    color: #e2ff05;
+    line-height: 42px;
+    text-align: center;
   }
 
   .answer-middle {
@@ -110,17 +114,16 @@ export default {
 
   .answer-stats{
     padding: 125px 0 0 0;
-
   }
 
   .answer-stats-1 {
     display:flex;
   }
 
-.big-percentage-1 {
+  .big-percentage-1 {
     font-family: Baloo Bhai;
     text-align: right;
-    font-size:64px;
+    font-size:70px;
     color: #99e394;
     text-transform:lowercase;
   }
@@ -134,19 +137,19 @@ export default {
     text-align: left;
   }
 
-.stats-people {
-  font-family:Open Sans;
-  font-size:20px;
-}
+  .stats-people {
+    font-family:Open Sans;
+    font-size:20px;
+  }
 
-.answer-stats-2 {
-  display:flex;
-}
+  .answer-stats-2 {
+    display:flex;
+  }
 
-.big-percentage-2 {
+  .big-percentage-2 {
     font-family: Baloo Bhai;
     text-align: right;
-    font-size:64px;
+    font-size:70px;
     color: #e2ff05;
     text-transform:lowercase;
   }
@@ -165,57 +168,55 @@ export default {
     justify-content: flex-end;
   }
 
+  #chart_div {
+    float:left;
+    width:40%;
+    height:700px;
+    padding-left: 180px;
+  }
 
-
-#chart_div {
-  float:left;
-  width:40%;
-  height:700px;
-  padding-left: 180px;
-}
-
-.img-small {
-  width:150px;
-  height:150px;
-  border-radius: 150px;
-}
+  .img-small {
+    width:150px;
+    height:150px;
+    border-radius: 150px;
+  }
 
 /* answer fade in transition */
 
-@keyframes fadeInUp {
+  @keyframes fadeInUp {
     from {
-        transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0)
     }
 
     to {
-        transform: translate3d(0,0,0);
-        opacity: 1
+      transform: translate3d(0,0,0);
+      opacity: 1
     }
-}
+  }
 
-@-webkit-keyframes fadeInUp {
+  @-webkit-keyframes fadeInUp {
     from {
-        transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0)
     }
 
     to {
-        transform: translate3d(0,0,0);
-        opacity: 1
+      transform: translate3d(0,0,0);
+      opacity: 1
     }
-}
+  }
 
-.animated {
+  .animated {
     animation-duration: 3s;
     animation-fill-mode: both;
     -webkit-animation-duration: 3s;
     -webkit-animation-fill-mode: both
-}
+  }
 
-.animatedFadeInUp {
+  .animatedFadeInUp {
     opacity: 0
-}
+  }
 
-.fadeInUp {
+  .fadeInUp {
     opacity: 0;
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;

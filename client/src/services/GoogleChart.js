@@ -16,8 +16,11 @@ export default{
         chartArea:{left:20,top:0},
         colors: ['#99e394', '#e2ff05'],
         legend: 'none',
-        pieHole: 0,
-        backgroundColor:'transparent'
+        pieHole: 0.2,
+        backgroundColor:'transparent',
+        is3D: 'true',
+        pieSliceTextStyle: {color: "#222222", fontName: "Open Sans", fontSize: 14}
+
 
     };
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
