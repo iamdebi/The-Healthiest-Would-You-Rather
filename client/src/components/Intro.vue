@@ -70,7 +70,7 @@ export default {
   padding:20px;
   height:100vh;
   margin: 0 auto;
-  background-image: linear-gradient(to right, rgba(13,212,26,.45), rgba(134,252,111,0.45));
+  background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
 }
 
 .intro-heading {
