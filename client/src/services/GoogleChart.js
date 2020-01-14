@@ -11,9 +11,14 @@ export default{
     data.setValue(1, 0, 'Option 2');
     data.setValue(1, 1, 100.0);
     var options = {
-        width:500,
-        height:400,
-        chartArea:{left:20,top:0}
+        width:'100%',
+        height:'100%',
+        chartArea:{left:20,top:0},
+        colors: ['#99e394', '#e2ff05'],
+        legend: 'none',
+        pieHole: 0,
+        backgroundColor:'transparent'
+
     };
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data, options);
