@@ -10,7 +10,7 @@
       </button>
     </div>
     <div class="intro-heading">
-       <h1>The Healthiest <br>Would you rather Quiz!</h1>
+       <h1>The Healthiest <br>Would You Rather Quiz!</h1>
     </div>
     <div class="intro-subhead">
        <p>Helping you make better food choices</p>
@@ -78,7 +78,7 @@ export default {
 
 .intro-main {
   width: 1310px;
-  padding:20px;
+  padding:60px 30px 30px 30px;
   height:100vh;
   margin: 0 auto;
   background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));

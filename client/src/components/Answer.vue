@@ -94,7 +94,7 @@ export default {
 
   .answer-main {
     width: 1310px;
-    padding:60px 20px 20px 20px;
+    padding:100px 20px 20px 20px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
@@ -306,28 +306,29 @@ export default {
   button.btn .button-text {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
-    top: 12px;
-    left: 0;
+    top: 7px;
+    left: 65px;
     right: 0;
     bottom: 0;
-    padding: 0.75rem 0;
-    margin: 0 0 0 2.5rem;
+    padding: 0.7rem 0;
+    margin: 0 0 0 rem;
     color: #e2ff05;
     font-weight: 700;
     line-height: 1.6;
     text-align: center;
     text-transform: uppercase;
     font-family: Baloo Bhai;
+    font-size:24px
   }
 
   button:hover .circle {
-    width: 100%;
+    width: 130%;
   }
 
   button:hover .circle .icon.arrow {
     background: #5956d7;
-    -webkit-transform: translate(0.5rem, 0);
-            transform: translate(0.5rem, 0);
+    -webkit-transform: translate(0.75rem, 0);
+            transform: translate(0.75rem, 0);
   }
 
   button:hover .button-text {
