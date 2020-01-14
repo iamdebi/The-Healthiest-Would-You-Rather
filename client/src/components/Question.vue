@@ -1,27 +1,33 @@
 <template lang="html">
-  <div class="question">
+  <div class="question-main">
     <div class="animated animatedFadeInUp fadeInUp">
-      <div class="title">
-        <h1>Question: {{currentQuestion+1}} </h1>
+      <div class="animated animatedFadeInUp fadeInUp">
+        <div class="question-heading">
+          <h1>Make a healthy choice</h1>
+        </div>
+      </div>
+      <div class="question-container animated animatedFadeInUp fadeInUp">
+        <div class="option1">
+          <div class="option1-image">
+            <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+          </div>
+          <div class="option1-text">
+            <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+          </div>
+        </div>
+        <div class="option2">
+          <div class="option2-image">
+            <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+          </div>
+          <div class="option2-text">
+            <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="animated animatedFadeInUp fadeInUp">
-      <div class="would-you-rather">
-        <h2>Would you rather eat...?</h2>
-      </div>
-      <div class="or">
-        <p class="or-text">OR</p>
-      </div>
-    </div>
-    <div class="question-container animated animatedFadeInUp fadeInUp">
-      <div class="option1">
-        <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
-        <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
-      </div>
-      <div class="option2">
-        <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
-        <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
-      </div>
+    <div style="clear:both;" />
+    <div class="pagination">
+      <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
     </div>
   </div>
 </template>
@@ -29,6 +35,7 @@
 <script>
 import QuizServices from "../services/QuizServices.js";
 import { eventBus } from "../main.js";
+import PaginationDots from "./PaginationDots.vue";
 
 export default {
   name: "question",
@@ -45,24 +52,40 @@ export default {
       QuizServices.updateQuestionResponses(this.questions[this.currentQuestion]);
       eventBus.$emit("selected-option", 2)
     },
+  },
+  components: {
+    "pagination-dots": PaginationDots
   }
 };
 </script>
 
 <style lang="css" scoped>
 
-.question {
-    width: 900px;
+.question-main {
+    width: 1310px;
     padding:20px;
     height:100vh;
     margin: 0 auto;
-    background-image: linear-gradient(90deg, #1d64f0 0%, #1ad5fd 100%);
+    background-image: linear-gradient(to right, rgba(29,100,240,.70), rgba(26,213,253,0.70));
+  }
+
+  .question-heading h1 {
+      font-family: Baloo Bhai;
+      font-size: 72px;
+      color: #ffffff;
+      line-height: 89px;
+      text-align: center;
   }
 
 img {
-  width:300px;
-  height:300px;
-  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0px 0px 38px rgba(0,0,0,0.24);
+  border-radius:400px;
+  border: 10px solid #6c74dd;
+}
+img:hover {
+  border: 10px solid #86fc6f;
 }
 
 .option1 {
@@ -76,7 +99,10 @@ img {
 }
 
 .option-text {
-  align-content: center;
+font-family: Baloo Bhai;
+font-size: 48px;
+color: #f0f086;
+text-align: center;
 }
 
 
@@ -117,6 +143,12 @@ img {
     opacity: 0;
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
+}
+
+.pagination{
+  display:flex;
+  justify-content:center;
+  align-items: flex-end;
 }
 
 </style>

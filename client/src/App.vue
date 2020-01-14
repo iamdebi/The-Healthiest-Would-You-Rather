@@ -2,10 +2,7 @@
 
   <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
-      <intro :number="this.users.length + 149" />
-      <!--<button type="button" name="button" v-on:click="summary">Summary</button>
-      <button v-on:click="openFullscreen();">Open Fullscreen</button>
-      <button v-on:click="closeFullscreen();">Close Fullscreen</button>-->
+      <intro :number="this.users.length + 149" :currentQuestion="this.currentQuestion" />
     </div>
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
@@ -13,17 +10,14 @@
         <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
       </div>
       <div class="answer" v-if="this.show == false">
-        <answer :questions="questions" :currentQuestion="this.currentQuestion"/>
-      </div>
-      <div class="pagination">
-        <pagination-dots :number="this.currentQuestion"/>
+        <answer :questions="this.questions" :currentQuestion="this.currentQuestion"/>
       </div>
     </div>
-
 
     <div class="summary" v-if="this.currentQuestion == 7">
       <summary-list :questions="this.questions" :responses="this.responses"/>
     </div>
+
   </div>
 
 </template>
@@ -36,7 +30,7 @@ import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
 import Answer from "./components/Answer.vue";
 import Intro from "./components/Intro.vue";
-import PaginationDots from "./components/PaginationDots.vue";
+
 
 export default {
   name: "app",
@@ -67,14 +61,17 @@ export default {
       this.nextQuestion();
     });
 
+    eventBus.$on("summary", summary => {
+      this.currentQuestion = 7
+    });
+
 },
 
   components: {
     "question": Question,
     "summary-list": Summary,
     "answer": Answer,
-    "intro": Intro,
-    "pagination-dots": PaginationDots
+    "intro": Intro
   },
 
   methods: {
@@ -84,44 +81,21 @@ export default {
     },
     nextDisplay() {
       this.show = !this.show
-    },
-    summary() {
-      this.currentQuestion = 7
-    },
-
-    openFullscreen() {
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-    document.documentElement.mozRequestFullScreen();
-  } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-    document.documentElement.msRequestFullscreen();
+    }
   }
-},
-
-  closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
-  }
-}
-  },
-
 };
 </script>
 
 <style lang="css">
+
 #app {
-  background-image: url("/img/gingham.jpg");
+  background-image: url("/img/food-background-blur.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+h1, h3, p {
+  text-shadow: 0px 0px 39px rgba(0,0,0,0.5);
 }
 
 button{
