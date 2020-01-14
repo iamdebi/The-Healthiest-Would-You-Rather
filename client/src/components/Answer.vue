@@ -61,10 +61,10 @@ export default {
   computed: {
     percentage1: function (){
      let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
-     return percentage.toFixed(1)
+     return percentage.toFixed(0)
     },
     percentage2: function (){
-    return (100 - this.percentage1).toFixed(1)
+    return (100 - this.percentage1).toFixed(0)
     }
   },
   components: {
@@ -109,7 +109,6 @@ export default {
   }
 
   .answer-stats{
-    width: 40%;
     padding: 125px 0 0 0;
 
   }
@@ -121,7 +120,7 @@ export default {
 .big-percentage-1 {
     font-family: Baloo Bhai;
     text-align: right;
-    font-size:64px;
+    font-size:70px;
     color: #99e394;
     text-transform:lowercase;
   }
@@ -147,7 +146,7 @@ export default {
 .big-percentage-2 {
     font-family: Baloo Bhai;
     text-align: right;
-    font-size:64px;
+    font-size:70px;
     color: #e2ff05;
     text-transform:lowercase;
   }
