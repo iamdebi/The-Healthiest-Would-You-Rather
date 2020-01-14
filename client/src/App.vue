@@ -87,19 +87,18 @@ export default {
 </script>
 
 <style lang="css">
+  #app {
+    background-image: url("/img/food-background-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
 
-#app {
-  background-image: url("/img/food-background-blur.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
+  h1, h3, p {
+    text-shadow: 0px 0px 39px rgba(0,0,0,0.5);
+  }
 
-h1, h3, p {
-  text-shadow: 0px 0px 39px rgba(0,0,0,0.5);
-}
-
-button{
-  padding:12px;
-  border-radius: 10px;
-}
+  button{
+    padding:12px;
+    border-radius: 10px;
+  }
 </style>

@@ -44,31 +44,31 @@ export default {
 </script>
 
 <style lang="css" scoped>
-img {
-  width: 150px;
-  height: 150px;
-  box-shadow: 0px 0px 38px rgba(0,0,0,0.24);
-  border-radius:400px;
-  border: 10px solid #6c74dd;
-  margin-right: 10px;
-}
-.summary-list{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-right: 20px;
-}
-.chosen{
-  border: 10px solid rgba(13,212,26,.62);
-}
-.not-chosen{
-  border: 10px solid #6c74dd;
-}
+  img {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 0px 38px rgba(0,0,0,0.24);
+    border-radius:400px;
+    border: 10px solid #6c74dd;
+    margin-right: 10px;
+  }
+  .summary-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+  .chosen{
+    border: 10px solid rgba(13,212,26,.62);
+  }
+  .not-chosen{
+    border: 10px solid #6c74dd;
+  }
 
-.option1-text, .option2-text{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
+  .option1-text, .option2-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 </style>
