@@ -15,9 +15,14 @@
     <div class="intro-subhead">
        <p>Helping you make better food choices</p>
     </div>
-    <div class="start-button-container">
-      <button type="button" v-on:click="handleStartButtonClick()">Start</button>
+    <div id="container" class="start-button-container">
+      <button class="btn" type="button" v-on:click="handleStartButtonClick()">
+        <span class="circle">
+          <span class="icon arrow"></span>
+      </span>
+      <span id="start" class="button-text">Start</span></button>
     </div>
+
     <div class="intro-people-counter">
        <p>{{this.number}} people have taken this quiz</p>
     </div>
