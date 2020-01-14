@@ -1,20 +1,25 @@
 <template lang="html">
-  <div id="">
-    <ul>
-      <response-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
-    </ul>
-    <button type="button" name="share" v-on:click="handleScreenshot(); displayShare = !displayShare " v-if="!displayShare">Share</button>
+  <div class="summary-main">
+    <div class="summary-heading">
+      <h1>Your choices!</h1>
+    </div>
+    <div class="summary-list-container">
+      <ul>
+        <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
+      </ul>
+    </div>
+    <button type="button" name="share" v-on:click= "displayShare = !displayShare " v-if="!displayShare">Share</button>
     <transition name="fade">
       <share-button v-if="displayShare" v-on:click="handleScreenshot" />
     </transition>
-    <!-- <button type="button" v-on:click="handleScreenshot">Screenshot</button> -->
+    <button type="button" v-on:click="handleScreenshot">Screenshot</button>
   </div>
 </template>
 
 <script>
-import ResponseListItem from "./ResponseListItem.vue"
 import ShareButton from "./ShareButton.vue"
 import CanvasFunction from "../services/CanvasFunction.js"
+import SummaryListItem from "./SummaryListItem.vue"
 export default {
   name: "summary-list",
 
@@ -27,9 +32,9 @@ export default {
   props : ["questions", "responses"],
 
   components: {
-    "response-list-item": ResponseListItem,
     "share-button": ShareButton,
-    "canvas-function": CanvasFunction
+    "canvas-function": CanvasFunction,
+    "summary-list-item": SummaryListItem
   },
 
   methods: {
@@ -46,5 +51,15 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.summary-main {
+  width: 1310px;
+  padding:20px;
+  height:100vh;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
+}
+.summary-list-container{
+  column-count: 2;
 }
 </style>

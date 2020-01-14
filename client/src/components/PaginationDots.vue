@@ -23,7 +23,7 @@ export default {
 <style lang="css" scoped>
 
 .pagination ul{
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style-type: none;
   position: absolute;

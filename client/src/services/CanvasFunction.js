@@ -4,7 +4,7 @@ export default {
   takeScreenshot() {
     html2canvas(document.querySelector(".summary"))
     .then(canvas => {
-      saveAs(canvas.toDataURL(), 'screenshot.jpg');
+      saveAs(canvas.toDataURL(), 'infographic.jpg');
     })
     function saveAs(uri, filename) {
     var link = document.createElement('a');
