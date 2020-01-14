@@ -54,7 +54,7 @@ export default {
 <style lang="css" scoped>
 
 .question-main {
-    width: 900px;
+    width: 1310px;
     padding:20px;
     height:100vh;
     margin: 0 auto;

@@ -4,6 +4,7 @@
       <div class="answer-heading">
         <h1>{{this.questions[currentQuestion].responseText}}</h1>
       </div>
+      <div class="answer-middle">
       <div id='chart_div'></div>
       <div class="answer-stats">
         <div class="answer-stats-1">
@@ -13,7 +14,7 @@
          <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
        </div>
      </div>
-     <div class="clear"></div>
+    </div>
      <div class="next-button"
         <button type="button" class="next-btn" v-on:click="handleNextClick">Next</button>
      </div>
@@ -57,7 +58,7 @@ export default {
 <style lang="css" scoped>
 
 .answer-main {
-    width: 900px;
+    width: 1310px;
     padding:20px;
     height:100vh;
     margin: 0 auto;
@@ -67,28 +68,52 @@ export default {
   .answer-heading h1 {
       font-family: Baloo Bhai;
       font-size: 36px;
-      color: #ffffff;
+      color: #e2ff05;
       line-height: 42px;
       text-align: center;
   }
 
+  .answer-middle {
+    width:100%;
+    height:300px
+  }
+
+  .answer-stats{
+    float:left;
+    width:40%;
+    padding:30px;
+  }
+
+
+  .answer-stats-1 p {
+    font-family: Baloo Bhai;
+    font-size: 36px;
+    color: #99e394;
+    line-height: 42px;
+    text-align: left;
+
+  }
+
+  .answer-stats-2 p {
+    font-family: Baloo Bhai;
+    font-size: 36px;
+    color: #e2ff05;
+    line-height: 42px;
+    text-align: left;
+
+  }
+
 #chart_div {
   float:left;
-  height: 500px;
+  width:40%;
+  height:700px;
 }
 
-.answer-stats{
-  float:right;
-  padding:30px;
-}
 
-.clear {
+/*.next-button {
   clear:left;
-}
-
-.next-button {
   float:right
-}
+}*/
 
 
 @keyframes fadeInUp {

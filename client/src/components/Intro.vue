@@ -12,6 +12,9 @@
     <div class="intro-people-counter">
        <p>{{this.number}} people have taken this quiz</p>
     </div>
+    <button type="button" name="button" v-on:click="summary">Summary</button>
+    <button v-on:click="openFullscreen();">Open Fullscreen</button>
+    <button v-on:click="closeFullscreen();">Close Fullscreen</button>
   </div>
 </template>
 
@@ -21,10 +24,38 @@ export default {
   name:"intro",
   methods: {
     handleStartButtonClick() {
-      eventBus.$emit("next-question")
+      eventBus.$emit("next-question");
+    },
+
+      summary() {
+        this.currentQuestion = 7
+      },
+
+      openFullscreen() {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+      document.documentElement.msRequestFullscreen();
     }
   },
-  props: ["number"]
+
+    closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  }
+},
+  props: ["number", "currentQuestion"]
 }
 </script>
 
@@ -34,7 +65,7 @@ export default {
 
 
 .intro-main {
-  width: 900px;
+  width: 1310px;
   padding:20px;
   height:100vh;
   margin: 0 auto;

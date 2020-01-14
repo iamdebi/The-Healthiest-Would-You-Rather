@@ -2,10 +2,7 @@
 
   <div class="app" id="app">
     <div class="intro" v-if="this.currentQuestion == -1">
-      <intro :number="this.users.length + 149" />
-      <!--<button type="button" name="button" v-on:click="summary">Summary</button>
-      <button v-on:click="openFullscreen();">Open Fullscreen</button>
-      <button v-on:click="closeFullscreen();">Close Fullscreen</button>-->
+      <intro :number="this.users.length + 149" :currentQuestion="this.currentQuestion" />
     </div>
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
@@ -84,35 +81,9 @@ export default {
     },
     nextDisplay() {
       this.show = !this.show
-    },
-    summary() {
-      this.currentQuestion = 7
-    },
+    }
 
-    openFullscreen() {
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-    document.documentElement.mozRequestFullScreen();
-  } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-    document.documentElement.msRequestFullscreen();
   }
-},
-
-  closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
-  }
-}
-  },
 
 };
 </script>
