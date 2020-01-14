@@ -4,9 +4,7 @@
       <h1>Your choices!</h1>
     </div>
     <div class="summary-list-container">
-      <ul>
-        <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
-      </ul>
+      <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </div>
     <button type="button" name="share" v-on:click= "displayShare = !displayShare " v-if="!displayShare">Share</button>
     <transition name="fade">
@@ -69,7 +67,7 @@ export default {
   margin: 0 auto;
   background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
 }
-.summary-list-container{
+.summary-list-item{
   column-count: 2;
 }
 </style>
