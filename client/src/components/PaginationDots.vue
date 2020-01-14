@@ -1,25 +1,22 @@
 <template lang="html">
   <div class="pagination">
     <ul>
-      <li></li>
-      <li></li>
-      <li id="is-active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <dots v-for="(question, index) in this.questions" :number="number" :counter="index" />
     </ul>
   </div>
 </template>
 
-
-
 <script>
 
 import eventBus from "../main.js"
+import Dots from "./Dots.vue"
 
 export default {
   name:"pagination-dots",
-  props: ["number"]
+  props: ["number", "questions"],
+  components: {
+    "dots": Dots
+  }
 }
 </script>
 
@@ -34,19 +31,19 @@ export default {
   list-style-type: none;
 }
 
-.pagination li{
+li{
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   margin-right: 5px;
   border-radius: 100%;
   background-color: #6C74DD;
 }
 
-#is-active{
+#active{
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 30px;
+  height: 30px;
   margin-top: 5px;
   border-radius: 100%;
   background-color: #2ecc71;
