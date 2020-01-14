@@ -7,7 +7,7 @@
       <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
     </div>
       <share-button />
-    <button type="button" v-on:click="handleScreenshot()">Screenshot</button>
+    <button type="button" id="screenshot" v-on:click="handleScreenshot()">Screenshot</button>
   </div>
 </template>
 
@@ -15,6 +15,7 @@
 import ShareButton from "./ShareButton.vue"
 import SummaryListItem from "./SummaryListItem.vue"
 import QuizServices from "../services/QuizServices.js"
+import CanvasFunction from "../services/CanvasFunction.js";
 export default {
   name: "summary-list",
   data() {
@@ -25,10 +26,16 @@ export default {
   props : ["questions", "responses"],
   components: {
     "share-button": ShareButton,
-    "summary-list-item": SummaryListItem
+    "summary-list-item": SummaryListItem,
+    CanvasFunction
   },
   mounted() {
     QuizServices.postUser({responses: this.responses});
+  },
+  methods:{
+    handleScreenshot() {
+      CanvasFunction.takeScreenshot()
+    }
   }
 }
 </script>
@@ -52,5 +59,12 @@ export default {
 
   .summary-list-container{
     column-count: 2;
+  }
+
+  #screenshot{
+    margin-left: 8px;
+    padding:12px;
+    border-radius: 10px;
+    background-color: green;
   }
 </style>

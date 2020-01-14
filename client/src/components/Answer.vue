@@ -4,7 +4,6 @@
       <div class="answer-heading">
         <div class="img-left">
           <img class="img-small" :src="this.questions[currentQuestion].url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
-          <!--<img class="img-small" :src="this.questions[currentQuestion].url1"/>-->
         </div>
         <div class="answer-heading-text">
           <h1>{{this.questions[currentQuestion].responseText}}</h1>
@@ -58,7 +57,7 @@
 import QuizServices from "../services/QuizServices.js";
 import GoogleChart from "../services/GoogleChart.js";
 import { eventBus } from "../main.js";
-import { GChart } from 'vue-google-charts';
+// import { GChart } from 'vue-google-charts';
 import PaginationDots from "./PaginationDots.vue";
 
 export default {
@@ -81,15 +80,14 @@ export default {
     },
 
     chosen: function (){
-      console.log(this.responses.length)
       if (this.responses[this.responses.length-1] == 1) {
           return true
         }
         else {
           return false
         }
-      }
-    },
+    }
+  },
   components: {
     GoogleChart,
     "pagination-dots": PaginationDots
