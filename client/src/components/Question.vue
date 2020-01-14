@@ -26,9 +26,7 @@
       </div>
     </div>
     <div style="clear:both;" />
-    <div class="pagination">
       <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
-    </div>
   </div>
 </template>
 
@@ -63,7 +61,7 @@ export default {
 
   .question-main {
     width: 1310px;
-    padding:20px;
+    padding:60px 30px 30px 30px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(29,100,240,.70), rgba(26,213,253,0.70));
@@ -91,12 +89,12 @@ export default {
 
   .option1 {
     float:left;
-    padding-left: 195px;
+    padding-left: 175px;
   }
 
   .option2 {
     float:right;
-    padding-right: 195px;
+    padding-right: 175px;
   }
 
   .option1-text{

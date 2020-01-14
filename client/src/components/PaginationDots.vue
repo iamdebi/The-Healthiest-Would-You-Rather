@@ -22,11 +22,14 @@ export default {
 
 <style lang="css" scoped>
 
+.pagination {
+  margin:40px;
+}
+
 .pagination ul{
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
-  position: absolute;
   bottom: 0px;
   left: 43%;
   text-align: center;
@@ -43,10 +46,12 @@ li{
 
 #active{
   content: "";
+  position:relative;
+  top:4px;
   width: 30px;
   height: 30px;
-  margin-top: 5px;
+  margin-top: 7px;
   border-radius: 100%;
-  background-color: #2ecc71;
+  background-color: #86fc6f;
 }
 </style>
