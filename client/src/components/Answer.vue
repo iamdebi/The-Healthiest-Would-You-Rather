@@ -2,7 +2,15 @@
   <div class="answer-main">
     <div class="animated animatedFadeInUp fadeInUp">
       <div class="answer-heading">
+        <div class="img-left">
+          <img class="img-small" :src="this.questions[currentQuestion].url1"/>
+        </div>
+        <div class="answer-heading-text">
         <h1>{{this.questions[currentQuestion].responseText}}</h1>
+      </div>
+      <div class="img-right">
+        <img class="img-small" :src="this.questions[currentQuestion].url2"/>
+      </div>
       </div>
       <div class="answer-middle">
         <div id='chart_div'>
@@ -77,6 +85,15 @@ export default {
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
   }
 
+  answer-heading {
+    display: flex;
+    padding: 0 30px;
+}
+
+.answer-heading-text {
+  padding-top:15px;
+}
+
   .answer-heading h1 {
       font-family: Baloo Bhai;
       font-size: 36px;
@@ -116,6 +133,13 @@ export default {
   float:left;
   width:40%;
   height:700px;
+  padding-left: 120px;
+}
+
+.img-small {
+  width:150px;
+  height:150px;
+  border-radius: 150px;
 }
 
 /* answer fade in transition */
