@@ -62,6 +62,7 @@ export default {
 <style lang="css">
 
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 
 .intro-main {
