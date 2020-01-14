@@ -6,9 +6,9 @@ export default{
     data.addColumn('number', 'Responses');
 
     data.addRows(2);
-    data.setValue(0, 0, question.option1);
+    data.setValue(0, 0, question.option2);
     // data.setValue(0, 1, 0.0);
-    data.setValue(1, 0, question.option2);
+    data.setValue(1, 0, question.option1);
     // data.setValue(1, 1, 100.0);
 
     var options = {
@@ -28,10 +28,10 @@ export default{
     var percent = 0;
     var handler = setInterval(function(){
         percent += 1;
-        data.setValue(0, 1, (percent).toFixed(0));
-        data.setValue(1, 1, (question.totalResponses1+question.totalResponses2-percent).toFixed(0));
+        data.setValue(0, 1, (percent));
+        data.setValue(1, 1, (question.totalResponses1+question.totalResponses2-percent));
         chart.draw(data, options);
-    if (percent >= question.totalResponses1)
+    if (percent >= question.totalResponses2)
         clearInterval(handler);
     }, 30);
   },

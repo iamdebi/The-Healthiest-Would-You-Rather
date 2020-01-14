@@ -102,10 +102,10 @@ export default {
   },
   mounted() {
     if (this.colour) {
-      GoogleChart.drawChart(this.questions[this.currentQuestion], "#86fc6f", "#6c74dd")
+      GoogleChart.drawChart(this.questions[this.currentQuestion], "#6c74dd", "#86fc6f")
     }
     else {
-      GoogleChart.drawChart(this.questions[this.currentQuestion], "#6c74dd", "#86fc6f")
+      GoogleChart.drawChart(this.questions[this.currentQuestion], "#86fc6f", "#6c74dd")
     }
 
   }
