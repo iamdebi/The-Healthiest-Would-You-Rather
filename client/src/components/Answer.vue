@@ -165,9 +165,8 @@ export default {
 
   #chart_div {
     float:left;
-    width:40%;
+    width:100%;
     height:700px;
-    padding-left: 180px;
   }
 
   .img-small {

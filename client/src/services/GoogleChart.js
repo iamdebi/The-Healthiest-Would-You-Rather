@@ -13,7 +13,6 @@ export default{
     var options = {
         width:'100%',
         height:'100%',
-        chartArea:{left:20,top:0},
         colors: ['#99e394', '#e2ff05'],
         legend: 'none',
         pieHole: 0.2,
