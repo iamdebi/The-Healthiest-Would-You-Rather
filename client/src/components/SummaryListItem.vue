@@ -1,21 +1,19 @@
 <template lang="html">
   <div class="summary-list">
-    <div>
-      <img :src="this.question.url1" v-bind:class="[isActive ? 'active' : 'inactive']"/>
+    <div class="option1-image">
+      <img :src="this.question.url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
     </div>
-
-    <div class="option1text">
+    <div class="option1-text">
       <p>{{this.percentage1}}%
       <p>{{this.question.totalResponses1}} people</p>
     </div>
 
-    <div class="option2text">
+    <div class="option2-text">
       <p>{{this.percentage2}}%</p>
       <p>{{this.question.totalResponses2}} people</p>
     </div>
-
-    <div>
-      <img :src="this.question.url2" v-bind:class="[isActive ? 'inactive' : 'active']"/>
+    <div class="option2-image">
+      <img :src="this.question.url2" v-bind:class="[chosen ? 'not-chosen' : 'chosen']"/>
     </div>
   </div>
 </template>
@@ -33,7 +31,7 @@ export default {
     percentage2: function (){
       return (100 - this.percentage1).toFixed(1)
     },
-    isActive: function (){
+    chosen: function (){
       if (this.responses[this.counter] == 1) {
         return true
       }
@@ -47,8 +45,8 @@ export default {
 
 <style lang="css" scoped>
 img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   box-shadow: 0px 0px 38px rgba(0,0,0,0.24);
   border-radius:400px;
   border: 10px solid #6c74dd;
@@ -58,13 +56,19 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-right: 20px;
 }
-.active{
+.chosen{
   border: 10px solid rgba(13,212,26,.62);
 }
-.inactive{
+.not-chosen{
   border: 10px solid #6c74dd;
 }
 
-
+.option1-text, .option2-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 </style>

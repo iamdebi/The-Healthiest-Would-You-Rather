@@ -3,7 +3,7 @@
     <div class="screen-button">
       <button type="button" name="button" v-on:click="summary">Summary</button>
       <button v-on:click="openFullscreen();">
-        <img src="/img/full-screen.svg"
+        <img src="/img/full-screen.png"/>
       </button>
       <button v-on:click="closeFullscreen();">
         <img src="/img/reduce-screen.png"/>

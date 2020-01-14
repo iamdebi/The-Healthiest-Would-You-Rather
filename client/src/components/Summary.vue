@@ -18,6 +18,7 @@
 import ShareButton from "./ShareButton.vue"
 import CanvasFunction from "../services/CanvasFunction.js"
 import SummaryListItem from "./SummaryListItem.vue"
+import QuizServices from "../services/QuizServices.js"
 export default {
   name: "summary-list",
 
@@ -39,6 +40,9 @@ export default {
     handleScreenshot() {
       CanvasFunction.takeScreenshot()
     }
+  },
+  mounted() {
+    QuizServices.postUser({responses: this.responses});
   }
 }
 </script>
@@ -53,21 +57,14 @@ export default {
   background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
 }
 
-
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-.summary-main {
-  width: 1310px;
-  padding:20px;
-  height:100vh;
-  margin: 0 auto;
-  background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
-}
-.summary-list-item{
+
+.summary-list-container{
   column-count: 2;
 }
 </style>
