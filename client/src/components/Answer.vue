@@ -5,15 +5,16 @@
         <h1>{{this.questions[currentQuestion].responseText}}</h1>
       </div>
       <div class="answer-middle">
-        <div id='chart_div'></div>
-          <div class="answer-stats">
-            <div class="answer-stats-1">
-             <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
-            </div>
-           <div class="answer-stats-2">
-             <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
-           </div>
-         </div>
+        <div id='chart_div'>
+        </div>
+        <div class="answer-stats">
+          <div class="answer-stats-1">
+            <p style="text-transform:lowercase">{{percentage1}}% of people ({{this.questions[currentQuestion].totalResponses1}})  chose to eat {{this.questions[currentQuestion].option1}}</p>
+          </div>
+          <div class="answer-stats-2">
+            <p style="text-transform:lowercase">{{percentage2}}% of people ({{this.questions[currentQuestion].totalResponses2}}) chose to eat {{this.questions[currentQuestion].option2}}</p>
+          </div>
+        </div>
       </div>
       <div id="container">
         <button class="next-btn" type="button" v-on:click="handleNextClick">
@@ -24,6 +25,10 @@
         </button>
       </div>
     </div>
+    <div style="clear:both;" />
+    <div class="pagination">
+      <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
+    </div>
   </div>
 </template>
 
@@ -32,6 +37,7 @@ import QuizServices from "../services/QuizServices.js";
 import GoogleChart from "../services/GoogleChart.js";
 import { eventBus } from "../main.js";
 import { GChart } from 'vue-google-charts';
+import PaginationDots from "./PaginationDots.vue";
 
 export default {
   name: "answer",
@@ -52,7 +58,8 @@ export default {
     }
   },
   components: {
-    GoogleChart
+    GoogleChart,
+    "pagination-dots": PaginationDots
   },
   mounted() {
     GoogleChart.drawChart(this.percentage1)
@@ -103,6 +110,12 @@ export default {
     color: #e2ff05;
     line-height: 42px;
     text-align: left;
+  }
+
+  .pagination{
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
   }
 
 #chart_div {

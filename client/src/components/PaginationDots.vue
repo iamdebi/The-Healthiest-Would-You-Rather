@@ -35,7 +35,7 @@ li{
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 5px;
+  margin-right: 13px;
   border-radius: 100%;
   background-color: #6C74DD;
 }
