@@ -7,8 +7,11 @@ export default {
   },
 
   updateQuestionResponses(payload) {
-    const id = payload._id
-    const responses = {totalResponses1: payload.totalResponses1, totalResponses2: payload.totalResponses2}
+    const id = payload._id;
+    const responses = {
+      totalResponses1: payload.totalResponses1,
+      totalResponses2: payload.totalResponses2
+    };
     return fetch(baseURL + "/questions/" + id, {
       method: "PUT",
       body: JSON.stringify(responses),

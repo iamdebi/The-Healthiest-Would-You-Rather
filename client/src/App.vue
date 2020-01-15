@@ -24,8 +24,7 @@
 </template>
 
 <script>
-
-import {eventBus} from "./main.js";
+import { eventBus } from "./main.js";
 import QuizServices from "./services/QuizServices.js";
 import Question from "./components/Question.vue";
 import Summary from "./components/Summary.vue";
@@ -38,30 +37,28 @@ export default {
   data() {
     return {
       users: [],
-      questions:[],
+      questions: [],
       show: false,
       currentQuestion: -1,
-      responses:[]
+      responses: []
     };
   },
 
   mounted() {
-    QuizServices.getQuestions()
-      .then(questions => (this.questions = questions));
+    QuizServices.getQuestions().then(questions => (this.questions = questions));
 
-    QuizServices.getUsers()
-      .then(users => (this.users = users));
+    QuizServices.getUsers().then(users => (this.users = users));
 
     eventBus.$on("selected-option-1", question => {
-      this.responses.push(1)
-      question.totalResponses1 += 1
+      this.responses.push(1);
+      question.totalResponses1 += 1;
       QuizServices.updateQuestionResponses(question);
       this.nextDisplay();
     });
 
     eventBus.$on("selected-option-2", question => {
-      this.responses.push(2)
-      question.totalResponses2 += 1
+      this.responses.push(2);
+      question.totalResponses2 += 1;
       QuizServices.updateQuestionResponses(question);
       this.nextDisplay();
     });
@@ -71,43 +68,44 @@ export default {
     });
 
     eventBus.$on("summary", summary => {
-      this.currentQuestion = 6
+      this.currentQuestion = 6;
     });
-
   },
 
   components: {
-    "question": Question,
+    question: Question,
     "summary-list": Summary,
-    "answer": Answer,
-    "intro": Intro
+    answer: Answer,
+    intro: Intro
   },
 
   methods: {
     nextQuestion() {
-      this.currentQuestion += 1
-      this.nextDisplay()
+      this.currentQuestion += 1;
+      this.nextDisplay();
     },
     nextDisplay() {
-      this.show = !this.show
+      this.show = !this.show;
     }
   }
 };
 </script>
 
 <style lang="css">
-  #app {
-    background-image: url("/img/food-background-blur.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
+#app {
+  background-image: url("/img/food-background-blur.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
-  h1, h3, p {
-    text-shadow: 0px 0px 39px rgba(0,0,0,0.5);
-  }
+h1,
+h3,
+p {
+  text-shadow: 0px 0px 39px rgba(0, 0, 0, 0.5);
+}
 
-  button{
-    padding:12px;
-    border-radius: 10px;
-  }
+button {
+  padding: 12px;
+  border-radius: 10px;
+}
 </style>
