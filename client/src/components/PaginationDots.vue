@@ -7,50 +7,48 @@
 </template>
 
 <script>
-
-import eventBus from "../main.js"
-import Dots from "./Dots.vue"
+import eventBus from "../main.js";
+import Dots from "./Dots.vue";
 
 export default {
-  name:"pagination-dots",
+  name: "pagination-dots",
   props: ["number"],
   components: {
-    "dots": Dots
+    dots: Dots
   }
-}
+};
 </script>
 
 <style lang="css" scoped>
+.pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 44%;
+}
 
-  .pagination {
-    position: absolute;
-    bottom: 20px;
-    left: 44%;
-  }
+.pagination ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
 
-  .pagination ul{
-    margin: 0 auto;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-  }
+li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 13px;
+  border-radius: 100%;
+  background-color: #c6cafb;
+}
 
-  li{
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 13px;
-    border-radius: 100%;
-    background-color: #c6cafb;
-  }
-
-  #active{
-    position:relative;
-    top:4px;
-    width: 30px;
-    height: 30px;
-    margin-top: 7px;
-    border-radius: 100%;
-    background-color: #86fc6f;
-  }
+#active {
+  position: relative;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+  margin-top: 7px;
+  border-radius: 100%;
+  background-color: #86fc6f;
+}
 </style>

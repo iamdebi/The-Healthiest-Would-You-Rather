@@ -36,11 +36,10 @@
 <script>
 export default {
   name: "share-button"
-}
+};
 </script>
 
 <style lang="css" scoped>
-
 .resp-sharing-button__link,
 .resp-sharing-button__icon {
   display: inline-block;
@@ -56,7 +55,7 @@ export default {
   border-radius: 15px;
   transition: 25ms ease-out;
   padding: 0.5em 0.75em;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   margin: 0;
   vertical-align: middle;
 }
@@ -107,12 +106,25 @@ export default {
 
 .resp-sharing-button--instagram {
   background: #d6249f;
-  background: radial-gradient(circle at 0% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  background: radial-gradient(
+    circle at 0% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
 }
 
 .resp-sharing-button--instagram:hover {
   background: #aa1d7d;
-  background: radial-gradient(circle at 0% 107%, #ddd482 0%, #ddd482 5%, #bf4037 45%,#aa1d7d 60%,#2149b7 90%);
+  background: radial-gradient(
+    circle at 0% 107%,
+    #ddd482 0%,
+    #ddd482 5%,
+    #bf4037 45%,
+    #aa1d7d 60%,
+    #2149b7 90%
+  );
 }
-
 </style>

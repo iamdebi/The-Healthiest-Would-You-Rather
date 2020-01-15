@@ -2,8 +2,6 @@
   <div class="intro-main">
     <div class="intro-container">
     <div class="screen-button">
-      <button type="button" name="button" v-on:click="summary">Summary</button>
-      <!-- TBD -->
       <button v-on:click="openFullscreen()" v-if="this.fullscreen == false">
         <img src="/img/full-screen.png"/>
       </button>
@@ -33,14 +31,14 @@
 </template>
 
 <script>
-import {eventBus} from "../main.js"
+import { eventBus } from "../main.js";
 export default {
-  name:"intro",
+  name: "intro",
   props: ["number"],
   data() {
     return {
       fullscreen: false
-    }
+    };
   },
   methods: {
     handleStartButtonClick() {
@@ -50,19 +48,22 @@ export default {
       eventBus.$emit("summary");
     }, //TBD
     openFullscreen() {
-      this.fullscreen = !this.fullscreen
+      this.fullscreen = !this.fullscreen;
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+      } else if (document.documentElement.mozRequestFullScreen) {
+        /* Firefox */
         document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        /* Chrome, Safari & Opera */
         document.documentElement.webkitRequestFullscreen();
-      } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+      } else if (document.documentElement.msRequestFullscreen) {
+        /* IE/Edge */
         document.documentElement.msRequestFullscreen();
       }
     },
     closeFullscreen() {
-      this.fullscreen = !this.fullscreen
+      this.fullscreen = !this.fullscreen;
       if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.mozCancelFullScreen) {
@@ -74,69 +75,70 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style lang="css">
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhai");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 
-  @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+.intro-main {
+  height: 100vh;
+  width: 1310px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    to right,
+    rgba(13, 212, 26, 0.62),
+    rgba(134, 252, 111, 0.62)
+  );
+}
 
+.intro-container {
+  padding: 45px 30px 30px 30px;
+}
 
-  .intro-main {
-    height:100vh;
-    width: 1310px;
-    margin: 0 auto;
-    background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
-  }
+.intro-heading {
+  margin-top: 120px;
+}
 
-  .intro-container {
-  padding:45px 30px 30px 30px;
-  }
+.intro-heading h1 {
+  font-family: Baloo Bhai;
+  font-size: 72px;
+  color: #ffffff;
+  line-height: 89px;
+  text-align: center;
+}
 
-  .intro-heading {
-    margin-top: 120px;
-  }
+.intro-subhead {
+  margin-top: 0;
+}
 
-  .intro-heading h1 {
-    font-family: Baloo Bhai;
-    font-size: 72px;
-    color: #ffffff;
-    line-height: 89px;
-    text-align: center;
-  }
+.intro-subhead p {
+  font-family: Baloo Bhai;
+  font-size: 48px;
+  color: #e2ff05;
+  text-align: center;
+}
 
-  .intro-subhead {
-    margin-top:0;
-  }
+p {
+  font-family: Open Sans;
+}
 
-  .intro-subhead p {
-    font-family: Baloo Bhai;
-    font-size: 48px;
-    color: #e2ff05;
-    text-align: center;
-  }
+.start-button-container {
+  display: flex;
+  justify-content: center;
+}
 
-  p {
-    font-family: Open Sans;
-  }
+.intro-people-counter {
+  font-family: Open Sans;
+  font-size: 32px;
+  color: #e2ff05;
+  text-align: center;
+}
 
-  .start-button-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .intro-people-counter {
-    font-family: Open Sans;
-    font-size: 32px;
-    color: #e2ff05;
-    text-align: center;
-  }
-
-  .screen-button{
-    display: flex;
-    flex-direction: row-reverse
-  }
-
+.screen-button {
+  display: flex;
+  flex-direction: row-reverse;
+}
 </style>
