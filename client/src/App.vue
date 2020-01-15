@@ -52,8 +52,18 @@ export default {
     QuizServices.getUsers()
       .then(users => (this.users = users));
 
-    eventBus.$on("selected-option", response => {
-      this.responses.push(response)
+    eventBus.$on("selected-option-1", question => {
+      console.log(question)
+      this.responses.push(1)
+      question.totalResponses1 += 1
+      QuizServices.updateQuestionResponses(question);
+      this.nextDisplay();
+    });
+
+    eventBus.$on("selected-option-2", question => {
+      this.responses.push(2)
+      question.totalResponses2 += 1
+      QuizServices.updateQuestionResponses(question);
       this.nextDisplay();
     });
 

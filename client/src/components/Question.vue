@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import QuizServices from "../services/QuizServices.js";
 import { eventBus } from "../main.js";
 import PaginationDots from "./PaginationDots.vue";
 
@@ -42,14 +41,10 @@ export default {
   props: ["currentQuestion", "question"],
   methods: {
     handleClick1() {
-      this.question.totalResponses1 += 1;
-      QuizServices.updateQuestionResponses(this.question);
-      eventBus.$emit("selected-option", 1)
+      eventBus.$emit("selected-option-1", this.question)
     },
     handleClick2() {
-      this.question.totalResponses2 += 1;
-      QuizServices.updateQuestionResponses(this.question);
-      eventBus.$emit("selected-option", 2)
+      eventBus.$emit("selected-option-2", this.question)
     },
   },
   components: {
