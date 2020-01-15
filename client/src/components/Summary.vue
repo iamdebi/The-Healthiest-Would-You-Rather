@@ -1,18 +1,21 @@
 <template lang="html">
   <div class="summary-main">
-    <div class="summary-heading">
-      <h1>Your choices!</h1>
+    <div class="summary-container">
+      <div class="summary-heading">
+        <h1>Your choices!</h1>
+      </div>
+      <div class="summary-list-container">
+        <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
+      </div>
+      <div class="share-text">
+        <p>Share your results...</p>
+      </div>
+      <div class="sum-btn">
+        <share-button />
+        <button class="btn" type="button" id="screenshot" v-on:click="handleScreenshot()">Screenshot</button>
+      </div>
     </div>
-    <div class="summary-list-container">
-      <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
-    </div>
-    <div class="share-text">
-      <p>Share your results...</p>
-    </div>
-    <div class="sum-btn">
-      <share-button />
-      <button class="btn" type="button" id="screenshot" v-on:click="handleScreenshot()">Screenshot</button>
-    </div>
+  </div>
   </div>
 </template>
 
@@ -47,6 +50,13 @@ export default {
 
 <style lang="css" scoped>
 
+.summary-main {
+  width: 1310px;
+  height:100vh;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
+}
+
   h1 {
     color: #fff;
     font-family: Baloo Bhai;
@@ -71,12 +81,10 @@ export default {
     text-align: center;
   }
 
-  .summary-main {
-    width: 1310px;
+  .summary-container {
     padding:60px 30px 30px 30px;
     height:100vh;
     margin: 0 auto;
-    background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
   }
 
   .fade-enter-active, .fade-leave-active {

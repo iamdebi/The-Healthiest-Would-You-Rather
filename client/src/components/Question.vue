@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="question-main">
+    <div class="container">
     <div class="animated animatedFadeInUp fadeInUp">
       <div class="animated animatedFadeInUp fadeInUp">
         <div class="question-heading">
@@ -24,10 +25,11 @@
           </div>
         </div>
       </div>
-    </div>
+        </div>
     <div style="clear:both;" />
     <pagination-dots :number="this.currentQuestion" />
   </div>
+</div>
 </template>
 
 <script>
@@ -60,10 +62,13 @@ export default {
 
   .question-main {
     width: 1310px;
-    padding:60px 30px 30px 30px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(29,100,240,.70), rgba(26,213,253,0.70));
+  }
+
+  .container {
+    padding:60px 30px 0px 30px;
   }
 
   .question-heading h1 {
@@ -89,12 +94,12 @@ export default {
 
   .option1 {
     float:left;
-    padding-left: 175px;
+    padding-left: 140px;
   }
 
   .option2 {
     float:right;
-    padding-right: 175px;
+    padding-right: 140px;
   }
 
   .option1-text{

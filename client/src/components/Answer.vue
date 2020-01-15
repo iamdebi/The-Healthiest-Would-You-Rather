@@ -1,5 +1,6 @@
 question<template lang="html">
   <div class="answer-main">
+    <div class="answer-container">
     <div class="animated animatedFadeInUp fadeInUp">
       <div class="answer-heading">
         <div class="img-left">
@@ -35,6 +36,7 @@ question<template lang="html">
             </div>
           </div>
         </div>
+        </div>
         <div style="clear:both;" />
         <div class="button-container">
           <button class="btn" type="button" v-on:click="handleNextClick">
@@ -45,11 +47,11 @@ question<template lang="html">
           </button>
         </div>
       </div>
-    </div>
     <div style="clear:both;" />
       <div class="pagination">
         <pagination-dots :number="this.currentQuestion" />
       </div>
+    </div>
   </div>
 </template>
 
@@ -115,13 +117,17 @@ export default {
 
   .answer-main {
     width: 1310px;
-    padding:60px 30px 30px 30px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
   }
 
+  .answer-container {
+    padding:60px 30px 0px 30px;
+  }
+
   .answer-heading {
+    margin: 0 50px 0 50px;
     display: flex;
     padding: 0;
   }

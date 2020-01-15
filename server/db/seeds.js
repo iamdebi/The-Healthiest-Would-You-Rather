@@ -34,7 +34,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "A slice of wholemeal bread",
+    option1: "Wholemeal bread slice",
     option2: "A blueberry muffin",
     responseText: "One blueberry muffin has the same fibre content as a slice of wholemeal bread",
     url1: "http://localhost:8080/img/bread.png",
@@ -54,7 +54,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "A double quarter-pounder meal and milkshake",
+    option1: "Fast food meal",
     option2: "Three avocados",
     responseText: "The calorie content of both of those options are the same",
     url1: "http://localhost:8080/img/mcdonalds.png",
