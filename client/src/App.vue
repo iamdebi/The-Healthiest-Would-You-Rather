@@ -7,11 +7,11 @@
 
     <div class="QA" v-if="this.currentQuestion >= 0 && this.currentQuestion < this.questions.length">
       <div class="question" v-if="this.show == true">
-        <question :currentQuestion="this.currentQuestion" :questions="this.questions"/>
+        <question :currentQuestion="this.currentQuestion" :question="this.questions[this.currentQuestion]"/>
       </div>
 
       <div class="answer" v-if="this.show == false">
-        <answer :questions="this.questions" :currentQuestion="this.currentQuestion" :responses="responses"/>
+        <answer :question="this.questions[this.currentQuestion]" :currentQuestion="this.currentQuestion" :responses="responses"/>
       </div>
     </div>
 

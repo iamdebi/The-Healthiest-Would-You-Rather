@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="pagination">
     <ul>
-      <dots v-for="(question, index) in this.questions" :number="number" :counter="index" />
+      <dots v-for="(index) in [0, 1, 2, 3, 4, 5, 6, 7]" :number="number" :counter="index" />
     </ul>
   </div>
 </template>
@@ -13,7 +13,7 @@ import Dots from "./Dots.vue"
 
 export default {
   name:"pagination-dots",
-  props: ["number", "questions"],
+  props: ["number"],
   components: {
     "dots": Dots
   }

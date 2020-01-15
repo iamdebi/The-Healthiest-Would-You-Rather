@@ -9,24 +9,24 @@
       <div class="question-container animated animatedFadeInUp fadeInUp">
         <div class="option1">
           <div class="option1-image">
-            <img :src="this.questions[currentQuestion].url1" v-on:click="handleClick1"/>
+            <img :src="this.question.url1" v-on:click="handleClick1"/>
           </div>
           <div class="option1-text">
-            <h3 class="option-text">{{this.questions[currentQuestion].option1}}</h3>
+            <h3 class="option-text">{{this.question.option1}}</h3>
           </div>
         </div>
         <div class="option2">
           <div class="option2-image">
-            <img :src="this.questions[currentQuestion].url2" v-on:click="handleClick2"/>
+            <img :src="this.question.url2" v-on:click="handleClick2"/>
           </div>
           <div class="option2-text">
-            <h3 class="option-text">{{this.questions[currentQuestion].option2}}</h3>
+            <h3 class="option-text">{{this.question.option2}}</h3>
           </div>
         </div>
       </div>
     </div>
     <div style="clear:both;" />
-    <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
+    <pagination-dots :number="this.currentQuestion" />
   </div>
 </template>
 
@@ -37,16 +37,16 @@ import PaginationDots from "./PaginationDots.vue";
 
 export default {
   name: "question",
-  props: ["currentQuestion", "questions"],
+  props: ["currentQuestion", "question"],
   methods: {
     handleClick1() {
-      this.questions[this.currentQuestion].totalResponses1 += 1;
-      QuizServices.updateQuestionResponses(this.questions[this.currentQuestion]);
+      this.question.totalResponses1 += 1;
+      QuizServices.updateQuestionResponses(this.question);
       eventBus.$emit("selected-option", 1)
     },
     handleClick2() {
-      this.questions[this.currentQuestion].totalResponses2 += 1;
-      QuizServices.updateQuestionResponses(this.questions[this.currentQuestion]);
+      this.question.totalResponses2 += 1;
+      QuizServices.updateQuestionResponses(this.question);
       eventBus.$emit("selected-option", 2)
     },
   },

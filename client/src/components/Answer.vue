@@ -1,15 +1,15 @@
-<template lang="html">
+question<template lang="html">
   <div class="answer-main">
     <div class="animated animatedFadeInUp fadeInUp">
       <div class="answer-heading">
         <div class="img-left">
-          <img class="img-small" :src="this.questions[currentQuestion].url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
+          <img class="img-small" :src="this.question.url1" v-bind:class="[chosen ? 'chosen' : 'not-chosen']"/>
         </div>
         <div class="answer-heading-text">
-          <h1>{{this.questions[currentQuestion].responseText}}</h1>
+          <h1>{{this.question.responseText}}</h1>
         </div>
       <div class="img-right">
-        <img class="img-small" :src="this.questions[currentQuestion].url2" v-bind:class="[chosen ? 'not-chosen' : 'chosen']"/>
+        <img class="img-small" :src="this.question.url2" v-bind:class="[chosen ? 'not-chosen' : 'chosen']"/>
       </div>
     </div>
       <div class="answer-middle">
@@ -22,7 +22,7 @@
           <div class="answer-stats-1" v-bind:id="[chosen ? 'chosen-stats' : 'not-chosen-stats']">
             <div class="big-percentage-1">{{percentage1}}%
             </div>
-            <div class="stats-text-1">chose {{this.questions[currentQuestion].option1}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses1}} people)</span>
+            <div class="stats-text-1">chose {{this.question.option1}} <br><span class="stats-people">({{this.question.totalResponses1}} people)</span>
             </div>
           </div>
           <div v-bind:class="[chosen ? 'not-chosen-text' : 'chosen-text']">
@@ -31,7 +31,7 @@
           <div class="answer-stats-2" v-bind:id="[chosen ? 'not-chosen-stats' : 'chosen-stats']">
             <div class="big-percentage-2">{{percentage2}}%
             </div>
-            <div class="stats-text-2">chose {{this.questions[currentQuestion].option2}} <br><span class="stats-people">({{this.questions[currentQuestion].totalResponses2}} people)</span>
+            <div class="stats-text-2">chose {{this.question.option2}} <br><span class="stats-people">({{this.question.totalResponses2}} people)</span>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
     </div>
     <div style="clear:both;" />
       <div class="pagination">
-        <pagination-dots :number="this.currentQuestion" :questions="this.questions" />
+        <pagination-dots :number="this.currentQuestion" />
       </div>
   </div>
 </template>
@@ -57,12 +57,11 @@
 import QuizServices from "../services/QuizServices.js";
 import GoogleChart from "../services/GoogleChart.js";
 import { eventBus } from "../main.js";
-// import { GChart } from 'vue-google-charts';
 import PaginationDots from "./PaginationDots.vue";
 
 export default {
   name: "answer",
-  props: ["currentQuestion", "questions", "responses"],
+  props: ["currentQuestion", "question", "responses"],
 
   methods: {
     handleNextClick() {
@@ -71,12 +70,12 @@ export default {
   },
   computed: {
     percentage1: function (){
-     let percentage = this.questions[this.currentQuestion].totalResponses1 / (this.questions[this.currentQuestion].totalResponses2 +this.questions[this.currentQuestion].totalResponses1)*100
-     return percentage.toFixed(1)
+      let percentage = (this.question.totalResponses1 / (this.question.totalResponses2 + this.question.totalResponses1) * 100).toFixed(0)
+      return percentage
     },
 
     percentage2: function (){
-    return (100 - this.percentage1).toFixed(1)
+    return (100 - this.percentage1).toFixed(0)
     },
 
     chosen: function (){
@@ -87,6 +86,7 @@ export default {
           return false
         }
     },
+
     colour: function (){
       if (this.responses[this.currentQuestion] == 1) {
         return true
@@ -102,12 +102,11 @@ export default {
   },
   mounted() {
     if (this.colour) {
-      GoogleChart.drawChart(this.questions[this.currentQuestion], "#c6cafb", "#86fc6f")
+      GoogleChart.drawChart(this.question, "#c6cafb", "#86fc6f")
     }
     else {
-      GoogleChart.drawChart(this.questions[this.currentQuestion], "#86fc6f", "#c6cafb")
+      GoogleChart.drawChart(this.question, "#86fc6f", "#c6cafb")
     }
-
   }
 };
 </script>
