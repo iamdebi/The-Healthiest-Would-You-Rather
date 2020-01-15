@@ -54,6 +54,10 @@ export default {
     text-align: center;
   }
 
+  .summary-heading {
+    margin-bottom:50px;
+  }
+
   .sum-btn{
     margin-top:40px;
     display: flex;

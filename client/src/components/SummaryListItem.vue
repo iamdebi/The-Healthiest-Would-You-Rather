@@ -52,6 +52,7 @@ export default {
     border-radius:400px;
     border: 10px solid #6c74dd;
     margin-right: 10px;
+    background:#001e544c;
   }
 
   .summary-list-item{

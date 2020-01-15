@@ -228,6 +228,7 @@ export default {
     width:150px;
     height:150px;
     border-radius: 150px;
+    background:#001e544c;
   }
 
 /* answer fade in transition */
