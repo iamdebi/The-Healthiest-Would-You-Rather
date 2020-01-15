@@ -88,7 +88,6 @@ export default {
     height:100vh;
     width: 1310px;
     margin: 0 auto;
-
     background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
   }
 

@@ -25,7 +25,7 @@ export default {
   .pagination {
     position: absolute;
     bottom: 20px;
-    left: 43%;
+    left: 44%;
   }
 
   .pagination ul{
@@ -45,7 +45,6 @@ export default {
   }
 
   #active{
-    content: "";
     position:relative;
     top:4px;
     width: 30px;
