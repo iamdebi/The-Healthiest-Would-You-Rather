@@ -77,19 +77,10 @@ export default {
     },
 
     percentage2: function (){
-    return (100 - this.percentage1).toFixed(0)
+    return (100 - this.percentage1)
     },
 
     chosen: function (){
-      if (this.responses[this.responses.length-1] == 1) {
-          return true
-        }
-        else {
-          return false
-        }
-    },
-
-    colour: function (){
       if (this.responses[this.currentQuestion] == 1) {
         return true
       }
@@ -103,7 +94,7 @@ export default {
     "pagination-dots": PaginationDots
   },
   mounted() {
-    if (this.colour) {
+    if (this.chosen) {
       GoogleChart.drawChart(this.question, "#c6cafb", "#86fc6f")
     }
     else {
@@ -133,17 +124,17 @@ export default {
   }
 
   .answer-heading-text {
-        padding: 15px 40px 0 40px;
+    padding: 15px 40px 0 40px;
   }
 
   .answer-heading h1 {
     font-family: Baloo Bhai;
-        font-size: 48px;
-        color: #e2ff05;
-        line-height: 55px;
-        text-align: center;
-        padding: 15px;
-        margin: 0;
+    font-size: 48px;
+    color: #e2ff05;
+    line-height: 55px;
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
   }
 
   .answer-middle {
@@ -165,7 +156,6 @@ export default {
     font-family: Baloo Bhai;
     text-align: right;
     font-size:70px;
-    text-transform:lowercase;
     position: relative;
     top: -20px;
     float:left;
@@ -184,7 +174,25 @@ export default {
   }
 
   #not-chosen-stats{
-   color: #c6cafb;
+    color: #c6cafb;
+  }
+
+  .chosen{
+    border: 8px solid #86fc6f;
+  }
+  .not-chosen{
+    border: 8px solid #c6cafb;
+  }
+
+  .chosen-text p {
+    font-family :Permanent Marker;
+    color:#86fc6f;
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .not-chosen-text p{
+    display:none;
   }
 
   .stats-text-1{
@@ -197,12 +205,12 @@ export default {
   }
 
   .stats-people {
-    font-family:Open Sans;
-    font-size:20px;
+    font-family: Open Sans;
+    font-size: 20px;
   }
 
   .answer-stats-2 {
-    width:100%;
+    width: 100%;
     margin-bottom: 30px;
   }
 
@@ -210,7 +218,6 @@ export default {
     font-family: Baloo Bhai;
     text-align: right;
     font-size:70px;
-    text-transform:lowercase;
     position: relative;
     top: -20px;
     float:left;
@@ -224,9 +231,6 @@ export default {
     line-height: 24px;
     text-align: left;
     text-transform: lowercase;
-  }
-
-  .button-container{
   }
 
   .img-small {
@@ -378,25 +382,5 @@ export default {
     color: #5956d7;
     font-family: Baloo Bhai;
   }
-
-  .chosen{
-    border: 8px solid #86fc6f;
-  }
-  .not-chosen{
-    border: 8px solid #c6cafb;
-  }
-
-  .chosen-text p {
-    font-family :Permanent Marker;
-    color:#86fc6f;
-    font-size: 32px;
-    margin: 0;
-  }
-
-  .not-chosen-text p{
-    display:none;
-  }
-
-
 
 </style>
