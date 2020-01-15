@@ -54,7 +54,7 @@ db.questions.insertMany([{
   },
 
   {
-    option1: "A double quarter-pounder meal and milkshake",
+    option1: "Fast food meal and milkshake",
     option2: "Three avocados",
     responseText: "The calorie content of both of those options are the same",
     url1: "http://localhost:8080/img/mcdonalds.png",
