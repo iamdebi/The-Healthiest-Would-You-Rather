@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="intro-main">
+    <div class="intro-container">
     <div class="screen-button">
       <button type="button" name="button" v-on:click="summary">Summary</button>
       <!-- TBD -->
@@ -27,6 +28,7 @@
     <div class="intro-people-counter">
        <p>Join the {{this.number}} people that have taken this quiz</p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -81,12 +83,17 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
   @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+
   .intro-main {
-    width: 1310px;
-    padding:60px 30px 30px 30px;
     height:100vh;
+    width: 1310px;
     margin: 0 auto;
+
     background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
+  }
+
+  .intro-container {
+  padding:60px 30px 30px 30px;
   }
 
   .intro-heading {
