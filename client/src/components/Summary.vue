@@ -1,10 +1,13 @@
 <template lang="html">
-  <div id="summary-main">
+  <div class="summary-main">
     <div class="summary-heading">
       <h1>Your choices!</h1>
     </div>
     <div class="summary-list-container">
       <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
+    </div>
+    <div class="share-text">
+      <p>Share your results...</p>
     </div>
     <div class="sum-btn">
       <share-button />
@@ -52,13 +55,21 @@ export default {
   }
 
   .sum-btn{
+    margin-top:40px;
     display: flex;
     justify-content: center;
   }
-  
+
+  .share-text {
+    font-family:Baloo Bhai;
+    font-size: 36px;
+    color:white;
+    text-align: center;
+  }
+
   .summary-main {
     width: 1310px;
-    padding:20px;
+    padding:60px 30px 30px 30px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));

@@ -6,14 +6,11 @@
     </div>
 
     <div class="option1-text">
-      <p>{{this.percentage1}}%
-      <p>{{this.question.totalResponses1}} people</p>
+      <p class="sum-percent">{{this.percentage1}}%</p><br><p class="option-people">{{this.question.totalResponses1}} people</p>
     </div>
-
-    <div class="option2-text">
-      <p>{{this.percentage2}}%</p>
-      <p>{{this.question.totalResponses2}} people</p>
-    </div>
+      <div class="option2-text">
+        <p class="sum-percent">{{this.percentage2}}%</p><br><p class="option-people">{{this.question.totalResponses2}} people</p>
+      </div>
 
     <div class="option2-image">
       <img :src="this.question.url2" v-bind:class="[chosen ? 'not-chosen' : 'chosen']"/>
@@ -30,10 +27,10 @@ export default {
   computed: {
     percentage1: function (){
      let percentage = this.question.totalResponses1 / (this.question.totalResponses2 + this.question.totalResponses1)*100
-     return percentage.toFixed(1)
+     return percentage.toFixed(0)
     },
     percentage2: function (){
-      return (100 - this.percentage1).toFixed(1)
+      return (100 - this.percentage1).toFixed(0)
     },
     chosen: function (){
       if (this.responses[this.counter] == 1) {
@@ -57,12 +54,6 @@ export default {
     margin-right: 10px;
   }
 
-  p {
-    color: #fff;
-    font-family: Baloo Bhai;
-    font-size: 24px;
-  }
-
   .summary-list-item{
     display: flex;
     flex-direction: row;
@@ -84,5 +75,20 @@ export default {
     justify-content: center;
     text-align: center;
   }
+
+  .sum-percent, .option2-percent p{
+    color: #fff;
+    font-family: Baloo Bhai;
+    font-size: 48px;
+    margin:0;
+  }
+
+  .option-people {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 16px;
+    margin:0;
+  }
+
 
 </style>
