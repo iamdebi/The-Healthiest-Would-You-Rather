@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 
   .pagination {
     margin:40px;

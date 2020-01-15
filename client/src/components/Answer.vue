@@ -123,6 +123,7 @@ export default {
   }
 
   .answer-heading {
+    margin-top: 50px;
     display: flex;
     padding: 0;
   }
