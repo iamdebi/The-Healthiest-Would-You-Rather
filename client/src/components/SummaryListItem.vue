@@ -82,6 +82,7 @@ export default {
     font-family: Baloo Bhai;
     font-size: 48px;
     margin:0;
+    line-height: 0.4;
   }
 
   .option-people {
