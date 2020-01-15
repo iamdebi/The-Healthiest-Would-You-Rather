@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="pagination">
     <ul>
-      <dots v-for="(index) in [0, 1, 2, 3, 4, 5, 6, 7]" :number="number" :counter="index" />
+      <dots v-for="(index) in [0, 1, 2, 3, 4, 5]" :number="number" :counter="index" />
     </ul>
   </div>
 </template>
@@ -23,14 +23,15 @@ export default {
 <style lang="css" scoped>
 
   .pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 43%;
   }
 
   .pagination ul{
     margin: 0 auto;
     padding: 0;
     list-style-type: none;
-    bottom: 0px;
-    left: 43%;
     text-align: center;
   }
 
