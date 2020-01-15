@@ -23,7 +23,6 @@ export default {
 <style lang="css" scoped>
 
   .pagination {
-    margin:40px;
   }
 
   .pagination ul{
