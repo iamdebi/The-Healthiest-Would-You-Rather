@@ -34,8 +34,7 @@ export default {
   props : ["questions", "responses"],
   components: {
     "share-button": ShareButton,
-    "summary-list-item": SummaryListItem,
-    CanvasFunction
+    "summary-list-item": SummaryListItem
   },
   mounted() {
     QuizServices.postUser({responses: this.responses});
@@ -50,16 +49,16 @@ export default {
 
 <style lang="css" scoped>
 
-.summary-main {
-  width: 1310px;
-  height:100vh;
-  margin: 0 auto;
-  background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
-}
+  .summary-main {
+    width: 1310px;
+    height:100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, rgba(13,212,26,.62), rgba(134,252,111,0.62));
+  }
 
-.summary-head{
-  margin: 0;
-}
+  .summary-head{
+    margin: 0;
+  }
 
   h1 {
     color: #fff;

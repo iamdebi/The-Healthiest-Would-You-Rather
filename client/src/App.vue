@@ -53,7 +53,6 @@ export default {
       .then(users => (this.users = users));
 
     eventBus.$on("selected-option-1", question => {
-      console.log(question)
       this.responses.push(1)
       question.totalResponses1 += 1
       QuizServices.updateQuestionResponses(question);
