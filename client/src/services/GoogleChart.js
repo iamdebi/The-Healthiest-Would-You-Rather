@@ -26,14 +26,27 @@ export default{
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data, options);
     var percent = 0;
-    var handler = setInterval(function(){
-        percent += 1;
-        data.setValue(0, 1, (percent));
-        data.setValue(1, 1, (question.totalResponses1+question.totalResponses2-percent));
-        chart.draw(data, options);
-    if (percent >= question.totalResponses2)
-        clearInterval(handler);
-    }, 30);
+    if (question.totalResponses2 > question.totalResponses1) {
+      var handler = setInterval(function(){
+          percent += 1.5;
+          data.setValue(0, 1, (percent));
+          data.setValue(1, 1, (question.totalResponses1+question.totalResponses2-percent));
+          chart.draw(data, options);
+      if (percent >= question.totalResponses2)
+          clearInterval(handler);
+      }, 30);
+    }
+    else {
+      var handler = setInterval(function(){
+          percent += 1.5;
+          data.setValue(0, 1, (question.totalResponses1+question.totalResponses2-percent));
+          data.setValue(1, 1, (percent));
+          chart.draw(data, options);
+      if (percent >= question.totalResponses1)
+          clearInterval(handler);
+      }, 30);
+    }
+
   },
 
   drawBarChart(percentage) {
