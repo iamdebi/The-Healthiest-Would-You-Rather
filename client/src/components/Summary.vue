@@ -7,6 +7,7 @@
       <div class="summary-list-container">
         <summary-list-item v-for="(question, index) in this.questions" :question="question" :responses="responses" :counter="index"/>
       </div>
+    </div>
       <div class="share-text">
         <p class="results-text">Share your results...</p>
       </div>
@@ -14,8 +15,6 @@
         <share-button />
         <button class="btn" type="button" id="screenshot" v-on:click="handleScreenshot()">Screenshot</button>
       </div>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -92,8 +91,7 @@ h1 {
 }
 
 .summary-container {
-  padding: 0 30px 30px 30px;
-  height: 100vh;
+  padding: 0 30px 0 30px;
   margin: 0 auto;
 }
 
