@@ -26,7 +26,7 @@ npm run server:dev
 
 open localhost:8080 in your browser
 
-Ror best viewing experince open in full screen
+For best viewing experince open in full screen
 
 
 Project Briefs
