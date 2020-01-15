@@ -93,7 +93,7 @@ export default {
   }
 
   .intro-container {
-  padding:60px 30px 30px 30px;
+  padding:45px 30px 30px 30px;
   }
 
   .intro-heading {
