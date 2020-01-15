@@ -116,7 +116,7 @@ export default {
 
   .answer-main {
     width: 1310px;
-    padding:100px 60px 20px 60px;
+    padding:60px 30px 30px 30px;
     height:100vh;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(197,68,251,.70), rgba(89,86,215,0.70));
