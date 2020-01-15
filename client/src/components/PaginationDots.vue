@@ -41,7 +41,7 @@ export default {
     height: 20px;
     margin-right: 13px;
     border-radius: 100%;
-    background-color: #6C74DD;
+    background-color: #c6cafb;
   }
 
   #active{

@@ -179,7 +179,7 @@ export default {
   }
 
   #not-chosen-stats{
-    color: #6c74dd
+   color: #c6cafb;
   }
 
   .stats-text-1{
@@ -377,7 +377,7 @@ export default {
     border: 8px solid #86fc6f;
   }
   .not-chosen{
-    border: 8px solid #6c74dd;
+    border: 8px solid #c6cafb;
   }
 
   .chosen-text p {

@@ -79,7 +79,7 @@ export default {
     height: 400px;
     box-shadow: 0px 0px 38px rgba(0,0,0,0.24);
     border-radius:400px;
-    border: 10px solid #6c74dd;
+    border: 10px solid  #c6cafb;;
   }
 
   img:hover {
