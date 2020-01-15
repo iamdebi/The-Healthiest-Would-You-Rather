@@ -124,11 +124,11 @@ export default {
   }
 
   .answer-container {
-    padding:60px 30px 30px 30px;
+    padding:60px 30px 0px 30px;
   }
 
   .answer-heading {
-    margin-top: 50px;
+    margin: 0 50px 0 50px;
     display: flex;
     padding: 0;
   }

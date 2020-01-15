@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="question-main">
-    <div class="question-container">
+    <div class="container">
     <div class="animated animatedFadeInUp fadeInUp">
       <div class="animated animatedFadeInUp fadeInUp">
         <div class="question-heading">
@@ -68,8 +68,8 @@ export default {
     background-image: linear-gradient(to right, rgba(29,100,240,.70), rgba(26,213,253,0.70));
   }
 
-  .question-container {
-    padding:60px 30px 30px 30px;
+  .container {
+    padding:60px 30px 0px 30px;
   }
 
   .question-heading h1 {
@@ -95,12 +95,12 @@ export default {
 
   .option1 {
     float:left;
-    padding-left: 150px;
+    padding-left: 140px;
   }
 
   .option2 {
     float:right;
-    padding-right: 150px;
+    padding-right: 140px;
   }
 
   .option1-text{
