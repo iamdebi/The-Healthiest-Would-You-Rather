@@ -1,8 +1,8 @@
 # Javascript-Project
 
-##The Healthiest Would Your Rather
+## The Healthiest Would Your Rather
 
-How To Run
+## How To Run
 
 In terminal
 
@@ -13,7 +13,7 @@ npm i
 npm run serve
 
 
-Open new terminal tab
+## Open new terminal tab
 
 
 
@@ -31,7 +31,7 @@ open localhost:8080 in your browser
 For best viewing experince open in full screen
 
 
-Project Briefs
+## Project Briefs
 
 
 
